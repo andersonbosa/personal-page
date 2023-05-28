@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contacts
+    url: https://andersonbosa.github.io/#/contacts
+    about: |
+      Please only file issues here that you believe represent actual bugs or feature requests for the repository
