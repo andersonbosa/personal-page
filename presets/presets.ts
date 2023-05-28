@@ -57,13 +57,14 @@ export default (env: ConfigEnv) => {
       ],
       include: [
         /\.vue$/,
-         /\.vue\?vue/,
+        /\.vue\?vue/,
       ],
       // imports Specify the location of the component, the default is src/components; if necessary, you can also add the view directory
       dirs: ['src/components/'],
       resolvers: [
-        VueUseComponentsResolver(),
         ElementPlusResolver(),
+        IconsResolver(),
+        VueUseComponentsResolver(),
       ],
     }),
 

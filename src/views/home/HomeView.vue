@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <main>
-    <p>v2</p>
-  </main>
+  <section>
+    <UnderConstruction />
+  </section>
 </template>
