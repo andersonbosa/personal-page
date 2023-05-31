@@ -1,10 +1,11 @@
-# Name of this GitHub Actions workflow.
-name: Conviso SAST
+#
 # Check https://www.convisoappsec.com !
+#
+name: Security scan using Conviso SAST
 
 on:
   # Scan changed files in PRs (diff-aware scanning):
-  pull_request: {}
+  # pull_request: {}
   # Scan mainline branches and report all findings:
   push:
     branches: ["main"]

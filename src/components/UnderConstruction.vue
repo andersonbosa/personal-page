@@ -11,8 +11,8 @@ interface Countdown {
 const countdown = ref<Countdown>({
   days: 0,
   hours: 0,
-  minutes: 3,
-  seconds: 47
+  minutes: 0,
+  seconds: 4
 })
 
 const updateCountdown = () => {
@@ -44,21 +44,30 @@ onMounted(() => {
   updateCountdown()
 })
 
-watch(countdown, (newValue) => {
-  if (newValue.days === 0 && newValue.hours === 0 && newValue.minutes === 0 && newValue.seconds === 0) {
+watch(countdown.value, (newValue) => {
+  const countdownCompleted = newValue.days === 0 && newValue.hours === 0 && newValue.minutes === 0 && newValue.seconds === 0
+  console.log(`countdown watcher`, newValue)
+
+  if (countdownCompleted) {
     // Countdown reached zero, do something here if needed
-    ElMessage.warning(`Its a joke! I don't know how long it is missing 🥳`)
+    const msg1 = `Its a joke! I don't know how long it is missing 🥳`
+    const msg2 = `You can contact me at: https://www.linkedin.com/in/andersonbosa/`
+
+    window.alert(msg1 + "\n\n\n" + msg2)
+    window.open('https://www.linkedin.com/in/andersonbosa/', 'blank')
   }
 })
 </script>
 
 
 <template>
-  <section class="parent">
-    <div class="parentparent">
-      <h1 class="parentparentparent">Under Construction</h1>
-      <p class="parentparentparentparent">We're working on something awesome. Please check back later!</p>
-      <p class="parentparentparentparentparent">Please come back in
+  <section class="card_parent">
+    <div class="card_wrapper">
+      <h1 class="card_title">Under Construction</h1>
+      <p class="card_phrase">We're working on something awesome. Please check back later!</p>
+      <hr />
+      <p class="card_phrase">
+        Please come back in
         <strong>{{ countdown.days }}</strong> days,
         <strong>{{ countdown.hours }}</strong> hours,
         <strong>{{ countdown.minutes }}</strong> minutes, and
@@ -90,24 +99,28 @@ watch(countdown, (newValue) => {
   }
 }
 
-.parent {
+.card_parent {
   @apply bg-monokai-gray-800 flex items-center justify-center h-screen w-screen;
 }
 
-.parentparent {
+.card_wrapper {
   transform: scale(1.4);
   @apply bg-monokai-gray-700 shadow p-8 rounded-md w-96;
 }
 
-.parentparentparent {
+@media (max-width: 640px) {
+  .card_wrapper {
+    transform: scale(0.9);
+  }
+}
+
+
+.card_title {
   @apply text-2xl font-bold mb-4 text-monokai-green;
+
 }
 
-.parentparentparentparent {
-  @apply text-gray-300 mb-8;
-}
-
-.parentparentparentparentparent {
-  @apply text-gray-300;
+.card_phrase {
+  @apply text-gray-300 my-8;
 }
 </style>
