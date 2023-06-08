@@ -3,6 +3,5 @@
 
 <template>
   <section>
-    <UnderConstruction />
   </section>
 </template>

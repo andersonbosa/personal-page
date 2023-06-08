@@ -6,17 +6,24 @@ interface Countdown {
   hours: number
   minutes: number
   seconds: number
+  running: boolean
 }
 
 const countdown = ref<Countdown>({
   days: 0,
   hours: 0,
   minutes: 0,
-  seconds: 4
+  seconds: 4,
+  running: true
 })
+
 
 const updateCountdown = () => {
   const countdownInterval = setInterval(() => {
+    if (!countdown.value.running) {
+      return
+    }
+
     countdown.value.seconds--
 
     if (countdown.value.seconds < 0) {
@@ -44,16 +51,19 @@ onMounted(() => {
   updateCountdown()
 })
 
-watch(countdown.value, (newValue) => {
-  const countdownCompleted = newValue.days === 0 && newValue.hours === 0 && newValue.minutes === 0 && newValue.seconds === 0
-  console.log(`countdown watcher`, newValue)
+const isCountdownCompleted = () => countdown.value.days === 0 &&
+  countdown.value.hours === 0 &&
+  countdown.value.minutes === 0 &&
+  countdown.value.seconds === 0
 
-  if (countdownCompleted) {
-    // Countdown reached zero, do something here if needed
-    const msg1 = `Its a joke! I don't know how long it is missing 🥳`
-    const msg2 = `You can contact me at: https://www.linkedin.com/in/andersonbosa/`
+watch(countdown.value, (_newValue) => {
+  if (isCountdownCompleted()) {
+    countdown.value.running = false
 
-    window.alert(msg1 + "\n\n\n" + msg2)
+    const msg1 = 'Its a joke! I don\'t know how long it is missing 🥳'
+    const msg2 = 'You can contact me at: https://www.linkedin.com/in/andersonbosa/'
+
+    window.alert(msg1 + '\n\n\n' + msg2)
     window.open('https://www.linkedin.com/in/andersonbosa/', 'blank')
   }
 })
