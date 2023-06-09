@@ -3,24 +3,24 @@
 
 // Declaration of Vue component automatically introduced
 declare module '*.vue' {
-  import { DefineComponent } from 'vue';
+  import { DefineComponent } from 'vue'
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
-  const component: DefineComponent<{}, {}, any>;
-  export default component;
+  const component: DefineComponent<{}, {}, any>
+  export default component
 }
 
 // State the component introduced by icons
 declare module '~icons/*' {
-  import { FunctionalComponent, SVGAttributes } from 'vue';
-  const component: FunctionalComponent<SVGAttributes>;
-  export default component;
+  import { FunctionalComponent, SVGAttributes } from 'vue'
+  const component: FunctionalComponent<SVGAttributes>
+  export default component
 }
 
 // Declaration MD file
 declare module '*.md' {
-  import type { DefineComponent } from 'vue';
-  const component: DefineComponent<{}, {}, any>;
-  export default component;
+  import type { DefineComponent } from 'vue'
+  const component: DefineComponent<{}, {}, any>
+  export default component
 }
 
 // State VITE environment variables

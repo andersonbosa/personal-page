@@ -1,5 +1,5 @@
 // Special routes that have nothing to do with authentication
-import { type RouteRecordRaw } from 'vue-router';
+import { type RouteRecordRaw } from 'vue-router'
 
 const exceptionRoutes: Array<RouteRecordRaw> = [
   {
@@ -23,6 +23,6 @@ const exceptionRoutes: Array<RouteRecordRaw> = [
     meta: {},
     redirect: '/404',
   },
-];
+]
 
-export default exceptionRoutes;
+export default exceptionRoutes

@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     ElResult: typeof import('element-plus/es')['ElResult']
     ElRow: typeof import('element-plus/es')['ElRow']
     NavBarIndex: typeof import('./components/NavBar/NavBarIndex.vue')['default']
+    ResumeIndex: typeof import('./components/Resume/ResumeIndex.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
