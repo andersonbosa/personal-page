@@ -1,10 +1,11 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <NavBarIndex />
+    <ResumeIndex />
   </div>
 </template>
 
-<style>
+<style scoped lang="postcss">
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;

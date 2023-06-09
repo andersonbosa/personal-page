@@ -3,6 +3,8 @@ import { ConfigEnv } from 'vite'
 /* ... */
 import vue from '@vitejs/plugin-vue'
 /* ... */
+import svgLoader from 'vite-svg-loader'
+/* ... */
 import { VueUseComponentsResolver, ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 /* ... */
@@ -25,6 +27,9 @@ export default (env: ConfigEnv) => {
       ],
     }),
 
+    /* https://www.npmjs.com/package/vite-svg-loader */
+    svgLoader(),
+
     /* https://github.com/antfu/unplugin-auto-import */
     AutoImport({
       dts: './src/auto-imports.d.ts',
@@ -43,8 +48,8 @@ export default (env: ConfigEnv) => {
       },
       resolvers: [
         ElementPlusResolver(),
-        IconsResolver(),
-        VueUseComponentsResolver(),
+        // VueUseComponentsResolver(),
+        // IconsResolver(),
       ]
       ,
     }),
@@ -63,8 +68,10 @@ export default (env: ConfigEnv) => {
       dirs: ['src/components/'],
       resolvers: [
         ElementPlusResolver(),
-        IconsResolver(),
         VueUseComponentsResolver(),
+        IconsResolver({
+          prefix: 'icon'
+        }),
       ],
     }),
 

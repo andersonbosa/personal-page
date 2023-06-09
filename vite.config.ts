@@ -1,7 +1,8 @@
-import { defineConfig, loadEnv } from 'vite'
 import { resolve } from 'path'
-import presets from './presets/presets.ts'
 import { fileURLToPath } from 'url'
+import { defineConfig, loadEnv } from 'vite'
+import presets from './presets/presets.ts'
+
 
 // https://vitejs.dev/config/
 export default defineConfig((env) => {
@@ -13,7 +14,7 @@ export default defineConfig((env) => {
     base: viteEnv.VITE_BASE,
 
     plugins: [
-      presets(env)
+      presets(env),
     ],
 
     resolve: {
@@ -52,6 +53,18 @@ export default defineConfig((env) => {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
           assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+        },
+      },
+    },
+
+    css: {
+      preprocessorOptions: {
+        // Global introduced SCSS files
+        scss: {
+          additionalData: `
+    @import "@/assets/styles/variables.scss";
+  `,
+          javascriptEnabled: true,
         },
       },
     },

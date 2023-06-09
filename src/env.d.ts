@@ -25,14 +25,14 @@ declare module '*.md' {
 
 // State VITE environment variables
 declare interface ImportMetaEnv {
-  readonly VITE_BASE: string;
-  readonly VITE_API_BASEURL: string;
-  readonly VITE_APP_TITLE: string;
-  // 更多环境变量...
+  readonly VITE_BASE: string
+  readonly VITE_API_BASEURL: string
+  readonly VITE_APP_TITLE: string
+  // More environment variables ...
 }
 
 declare interface ImportMeta {
-  readonly env: ImportMetaEnv;
+  readonly env: ImportMetaEnv
 }
 
 declare interface Window {

@@ -1,8 +1,0 @@
-@import "./base.css";
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-#app {
-  max-width: 1280px;
-}

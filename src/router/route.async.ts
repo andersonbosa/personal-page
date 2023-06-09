@@ -20,6 +20,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/about/AboutView.vue'),
   },
+
 ]
 
 export default asyncRoutes

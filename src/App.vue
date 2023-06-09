@@ -3,7 +3,9 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+  <el-config-provider :config="{}">
+    <RouterView />
+  </el-config-provider>
 </template>
 
 <style scoped></style>

@@ -5,8 +5,8 @@ const theme = defineStore({
   id: 'theme',
   state: () => {
     return {
-      themeType: '亮蓝色',
-      themeColor: '#2080F0FF',
+      themeType: 'light',
+      themeColor: '#8120f0',
     }
   },
 

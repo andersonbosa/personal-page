@@ -16,16 +16,20 @@
     // "checkJs": false,
     /* NOTEEND */
     /*  */
+    "noEmit": true,
+    /*  */
     "sourceMap": true, /* default: false */
     "strict": true, /* default: false */
     "resolveJsonModule": true, /* default: false */
-    "esModuleInterop": true, /* default: false */
+    "esModuleInterop": false, /* default: false */
     /*  */
     "composite": true, /* default: value */
     /*  */
-    "target": "es2022",
-    "module": "es2022",
-    "moduleResolution": "nodenext",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    /*  */
+    "allowImportingTsExtensions": true,
     /*  */
     "types": [
       "node"
