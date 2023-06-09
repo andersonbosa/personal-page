@@ -3,6 +3,7 @@
 
 <template>
   <section>
-  <p>home view</p>
+    <NavBarIndex />
+    <p>home view</p>
   </section>
 </template>

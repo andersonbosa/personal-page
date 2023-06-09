@@ -9,6 +9,18 @@ module.exports = {
 
   theme: {
     extend: {
+      monokai: {
+        background: '#272822',
+        text: '#f8f8f2',
+        comment: '#75715e',
+        string: '#e6db74',
+        keyword: '#f92672',
+        function: '#a6e22e',
+        variable: '#f8f8f2',
+        operator: '#f92672',
+        number: '#ae81ff',
+      },
+
       fontFamily: {
         sans: 'var(--font-roboto)',
         alt: 'var(--font-bai-jamjuree)',
@@ -72,6 +84,13 @@ module.exports = {
     },
   },
 
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('daisyui')
+  ],
+
+  daisyui: {
+    themes: ['light', 'dark',]
+  }
 }
 

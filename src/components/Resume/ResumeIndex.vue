@@ -1,22 +1,53 @@
 <script lang="ts" setup>
-import { reactive, toRefs } from 'vue'
-
-const componentState = reactive({})
-
-const stateRefs = toRefs(componentState)
-
-defineProps({
-  someStringProp: {
-    type: String,
-    required: false,
-  },
-})
+// import { reactive, toRefs } from 'vue'
+// const componentState = reactive({})
+// const stateRefs = toRefs(componentState)
+// defineProps({
+//   someStringProp: {
+//     type: String,
+//     required: false,
+//   },
+// })
 </script>
 <template>
   <div class="resume_wrapper">
     <div class="resume-grid_wrapper">
-      <div class="resume-grid_left_column">left/top</div>
-      <div class="resume-grid_right_column">right/bottom</div>
+      <div class="resume-grid_left_column">
+
+        <!-- profile -->
+          <!-- avatar -->
+          <!-- container -->
+            <!-- name -->
+            <!-- job title -->
+            <!-- contacts -->
+          <!-- end container -->
+        <!-- end profile -->
+
+        <!-- facts -->
+        <!-- end facts -->
+
+        <!-- skills -->
+        <!-- end skills -->
+
+        <!-- languages -->
+        <!-- end languages -->
+
+        <!-- curriculum -->
+        <!-- end curriculum -->
+
+      </div>
+      <div class="resume-grid_right_column">
+
+        <!-- about -->
+        <!-- end about -->
+
+        <!-- experiences -->
+        <!-- end experiences -->
+
+        <!-- projects -->
+        <!-- end projects -->
+
+      </div>
     </div>
   </div>
 </template>
@@ -38,12 +69,10 @@ defineProps({
 }
 
 .resume-grid_left_column {
-  background-color: #f1f1f1;
   padding: 10px;
 }
 
 .resume-grid_right_column {
-  background-color: #ccc;
   padding: 10px;
 }
 </style>
