@@ -1,69 +1,21 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class', 'html[data-theme="dark"]'],
+
   content: [
     './index.html',
     './src/**/*.{js,ts,vue}',
   ],
 
-
   theme: {
+
+    fontFamily: {
+      sans: 'var(--font-roboto)',
+      alt: 'var(--font-bai-jamjuree)',
+    },
+
     extend: {
-      monokai: {
-        background: '#272822',
-        text: '#f8f8f2',
-        comment: '#75715e',
-        string: '#e6db74',
-        keyword: '#f92672',
-        function: '#a6e22e',
-        variable: '#f8f8f2',
-        operator: '#f92672',
-        number: '#ae81ff',
-      },
-
-      fontFamily: {
-        sans: 'var(--font-roboto)',
-        alt: 'var(--font-bai-jamjuree)',
-      },
-
-      colors: {
-        gray: {
-          50: '#eaeaea',
-          100: '#bebebf',
-          200: '#9e9ea0',
-          300: '#727275',
-          400: '#56565a',
-          500: '#2c2c31',
-          600: '#28282d',
-          700: '#1f1f23',
-          800: '#18181b',
-          900: '#121215',
-        },
-        purple: {
-          50: '#f3eefc',
-          100: '#d8cbf7',
-          200: '#c6b2f3',
-          300: '#ab8eee',
-          400: '#9b79ea',
-          500: '#8257e5',
-          600: '#764fd0',
-          700: '#5c3ea3',
-          800: '#48307e',
-          900: '#372560',
-        },
-        green: {
-          50: '#e6fbef',
-          100: '#b1f1ce',
-          200: '#8cebb6',
-          300: '#57e295',
-          400: '#36dc81',
-          500: '#04d361',
-          600: '#04c058',
-          700: '#039645',
-          800: '#027435',
-          900: '#025929',
-        },
-      },
 
       backgroundImage: {
         stripes:
@@ -74,6 +26,8 @@ module.exports = {
         '5xl': '2.5rem',
       },
 
+      backgroundColor: {},
+
       backgroundSize: {
         stripes: '100% 8px',
       },
@@ -81,7 +35,25 @@ module.exports = {
       blur: {
         full: '194px',
       },
+
+      colors: {},
     },
+
+
+    /* TOFIX não está funcionando nos componentes  */
+    monokai: {
+      background: '#272822',
+      text: '#f8f8f2',
+      comment: '#75715e',
+      string: '#e6db74',
+      keyword: '#f92672',
+      function: '#a6e22e',
+      variable: '#f8f8f2',
+      operator: '#f92672',
+      number: '#ae81ff',
+    },
+
+    /* ... */
   },
 
   plugins: [
@@ -89,8 +61,18 @@ module.exports = {
     require('daisyui')
   ],
 
+  // daisyUI config (optional - here are the default values)
   daisyui: {
-    themes: ['light', 'dark',]
-  }
+    themes: false, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
+    darkTheme: 'dark', // name of one of the included themes for dark mode
+    base: true, // applies background color and foreground color for root element by default
+    styled: true, // include daisyUI colors and design decisions for all components
+    utils: true, // adds responsive and modifier utility classes
+    rtl: false, // rotate style direction from left-to-right to right-to-left. You also need to add dir="rtl" to your html tag and install `tailwindcss-flip` plugin for Tailwind CSS.
+    prefix: '', // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
+    logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
+  },
+
+  /* ... */
 }
 

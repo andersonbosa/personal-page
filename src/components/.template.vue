@@ -1,24 +1,13 @@
-<script  lang="ts" setup >
-import { reactive, toRefs } from 'vue'
-
-const componentState = reactive({
-  count: 0,
-})
-
-const stateRefs = toRefs(componentState)
-
-defineProps({
-  someStringProp: {
-    type: String,
-    required: false
-  }
-})
+<script lang="ts" setup>
+/* ... */
 </script>
 
 <template>
-  <div>
-    <p>{{ stateRefs.count.value }}</p>
-  </div>
+  <section>
+    <!-- ... -->
+  </section>
 </template>
 
-<style scoped></style>
+<style scoped lang="postcss">
+/* ... */
+</style>

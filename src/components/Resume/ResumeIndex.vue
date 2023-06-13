@@ -1,52 +1,38 @@
-<script lang="ts" setup>
-// import { reactive, toRefs } from 'vue'
-// const componentState = reactive({})
-// const stateRefs = toRefs(componentState)
-// defineProps({
-//   someStringProp: {
-//     type: String,
-//     required: false,
-//   },
-// })
-</script>
+<script lang="ts" setup></script>
+
 <template>
   <div class="resume_wrapper">
-    <div class="resume-grid_wrapper">
-      <div class="resume-grid_left_column">
+    <div class="resume_grid_wrapper">
+      <div class="grid_column resume_grid_left_column">
+        <section>
+          <ResumeProfile />
+        </section>
 
-        <!-- profile -->
-          <!-- avatar -->
-          <!-- container -->
-            <!-- name -->
-            <!-- job title -->
-            <!-- contacts -->
-          <!-- end container -->
-        <!-- end profile -->
+        <section>
+          <ResumeSkills />
+        </section>
 
-        <!-- facts -->
-        <!-- end facts -->
+        <section>
+          <ResumeLanguages />
+        </section>
 
-        <!-- skills -->
-        <!-- end skills -->
-
-        <!-- languages -->
-        <!-- end languages -->
-
-        <!-- curriculum -->
-        <!-- end curriculum -->
-
+        <section>
+          <ResumeDownload />
+        </section>
       </div>
-      <div class="resume-grid_right_column">
 
-        <!-- about -->
-        <!-- end about -->
+      <div class="grid_column resume_grid_right_column">
+        <section>
+          <ResumeAbout />
+        </section>
 
-        <!-- experiences -->
-        <!-- end experiences -->
+        <section>
+          <ResumeExperiences />
+        </section>
 
-        <!-- projects -->
-        <!-- end projects -->
-
+        <section>
+          <ResumeProjects />
+        </section>
       </div>
     </div>
   </div>
@@ -54,25 +40,31 @@
 
 <style scoped lang="postcss">
 .resume_wrapper {
-  height: 300px;
-}
+  @apply p-8;
+  /* @apply w-full; */
+  /* min-height: 100%; */
+  /* min-width: 100%; */
 
-.resume-grid_wrapper {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  /* grid-gap: 10px; */
-  height: 100%;
+  .resume_grid_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100%;
+    @apply gap-4;
+    /* @apply w-full; */
 
-  @media (max-width: 767px) {
-    grid-template-columns: 1fr;
+    .grid_column {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: stretch;
+      @apply gap-4;
+    }
   }
 }
 
-.resume-grid_left_column {
-  padding: 10px;
-}
-
-.resume-grid_right_column {
-  padding: 10px;
+@media (max-width: 1024px) {
+  .resume_grid_wrapper {
+    grid-template-columns: 1fr !important;
+  }
 }
 </style>

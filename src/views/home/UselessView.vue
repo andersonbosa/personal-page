@@ -6,10 +6,9 @@
     <header>
       <NavBarIndex />
     </header>
-    <main class="container">
-      <UselessWebsite />
+    <main>
+      <UselessWebsite style="height: 639px; min-width: 100%;" />
     </main>
-    <Footer />
   </section>
 </template>
 

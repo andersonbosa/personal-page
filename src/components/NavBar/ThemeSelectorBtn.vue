@@ -63,7 +63,7 @@ onMounted(() => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"
                     class="invisible h-3 w-3 shrink-0">
                     <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
-                  </svg>
+                </svg>
                   <div class="flex-grow text-sm">dark</div>
                   <div class="flex h-full flex-shrink-0 flex-wrap gap-1">
                     <div class="bg-primary w-2 rounded"></div>
@@ -75,7 +75,7 @@ onMounted(() => {
               </div>
             </div>
           </button>
-
+          <!-- -->
         </div>
       </div>
     </div>
@@ -84,11 +84,13 @@ onMounted(() => {
 
 <style lang="postcss" scoped>
 .theme_selector_btn {
+
   .flip-horizontal {
     @apply -scale-x-100;
   }
 
   .dropdown-content {
+    z-index: 1000 !important;
     @apply bg-base-200 text-base-content rounded-box top-px max-h-96 w-56 overflow-y-auto shadow mt-16;
   }
 

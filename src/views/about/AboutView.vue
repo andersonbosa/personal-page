@@ -1,16 +1,18 @@
 <template>
-  <div>
-    <NavBarIndex />
-    <ResumeIndex />
-  </div>
+  <section class="view-wrapper">
+    <header>
+      <NavBarIndex />
+    </header>
+    <main>
+      <ResumeIndex />
+    </main>
+    <Footer />
+  </section>
 </template>
 
 <style scoped lang="postcss">
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+/* .view-wrapper {
+  min-height: 100vh;
+  min-width: 100vw;
+} */
 </style>

@@ -31,11 +31,30 @@
 
 @layer base {
   /* to my compoents */
-  .dark {
-    /* ... */
-  }
 }
 
 @layer components {
   /* to third-party components (eg, element-plus) */
+  .mycard_title {
+    @apply font-bold pb-2;
+  }
+
+  .flex-start {
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .badge {
+    @apply bg-gray-300 text-gray-700;
+    @apply dark:bg-gray-600 dark:text-white;
+  }
+}
+
+@layer utilities {
+  .hovered_item {
+    @apply rounded-lg border border-gray-100;
+    @apply hover:bg-gray-100;
+    @apply dark:border-gray-700 dark:hover:bg-gray-700;
+  }
 }

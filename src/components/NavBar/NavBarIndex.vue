@@ -1,41 +1,50 @@
 <script lang="ts" setup>
-import { isDark, toggleDark } from '@/utils/dark'
 </script>
 
 <template>
-  <div class="">
-    <nav class="navbar_wrapper">
-      <!-- logo -->
-      <div class="inline-flex">
-        <a class="" href="/">
-          <div class="hidden md:block">[logo]</div>
-          <div class="block md:hidden">[logo mobile]</div>
-        </a>
-      </div>
-      <!-- end logo -->
-
-      <!-- search bar -->
-      <!-- <SearchInput /> -->
-      <!-- end search bar -->
-
-      <!-- buttons wrapper -->
-      <div class="flex-initial">
-        <div class="flex justify-end items-center relative">
-          <div class="flex mr-4 items-center">
-            <div class="block relative">
-              <ThemeSelectorBtn />
-            </div>
-          </div>
+  <div class="navbar_wrapper">
+    <div class="navbar">
+      <div class="navbar-start">
+        <div class="btn btn-ghost normal-case text-xl">
+          <router-link to="/">ANB</router-link>
         </div>
       </div>
-      <!-- end buttons wrapper -->
-    </nav>
+
+      <div class="navbar-center lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li>
+            <router-link to="/">Home</router-link>
+          </li>
+          <li>
+            <router-link to="/useless">Something useless</router-link>
+          </li>
+        </ul>
+      </div>
+
+      <div class="navbar-end">
+        <ToggleThemeBtn />
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped lang="postcss">
 /*  */
 .navbar_wrapper {
-  @apply w-full flex relative justify-between items-center mx-auto px-8 h-20;
+  @apply flex relative justify-between items-center;
+  @apply mx-auto px-8 h-20;
+  .navbar {
+    @apply bg-base-100;
+  }
+  .logo {
+    @apply text-black;
+    @apply dark:text-white;
+    @apply font-bold text-2xl;
+  }
+
+  .logo:hover {
+    transition: transform 1.2s;
+    transform: scale(2);
+  }
 }
 </style>
