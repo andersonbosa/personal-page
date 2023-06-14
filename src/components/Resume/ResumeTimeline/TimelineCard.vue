@@ -14,7 +14,7 @@ const _props = defineProps({
   <section class="timeline_card_wrapper">
     <div
       :tabindex="index"
-      class="collapse collapse-plus border border-base-300 bg-base-200 collapse-open"
+      class="collapse collapse-plus border border-base-300 bg-base-200"
     >
       <div class="collapse-title">
         <p>
@@ -27,7 +27,7 @@ const _props = defineProps({
           </a>
         </p>
         <p class="text-xs text-gray-400 flex flex-initial">
-        <icon-ic:baseline-location-on />
+          <icon-ic:baseline-location-on />
           {{ item.companyLocation }}
         </p>
       </div>
