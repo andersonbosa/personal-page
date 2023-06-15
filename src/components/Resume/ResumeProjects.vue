@@ -89,4 +89,10 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="postcss">
+.pagination_wrapper {
+  @apply mt-10;
+  display: flex;
+  justify-content: center;
+}
+</style>

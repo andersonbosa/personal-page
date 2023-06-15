@@ -19,11 +19,9 @@
   flex-direction: row;
 }
 
-
 @media (max-width: 1024px) {
   .card {
     min-width: 100%;
-    max-width: 80vw !important;
     /* REVIEW esse 80vw foi para deixar o card "certinho" quando em dispositivo móvel */
   }
 }

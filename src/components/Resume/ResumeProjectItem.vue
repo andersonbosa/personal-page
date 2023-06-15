@@ -35,9 +35,10 @@ defineProps({
 }
 .project_item_card {
 }
-.project_item_top_border {
+.project_item_top_bo rder {
 }
 .project_item_card_content {
+  word-wrap: break-word;
 }
 
 /* ... */

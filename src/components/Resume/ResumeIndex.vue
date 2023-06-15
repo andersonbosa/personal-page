@@ -40,16 +40,19 @@
 
 <style scoped lang="postcss">
 .resume_wrapper {
-  @apply p-8;
-  /* @apply w-full; */
-  /* min-height: 100%; */
-  /* min-width: 100%; */
+  @apply w-full;
+  min-height: 100%;
+  min-width: 100%;
 
   .resume_grid_wrapper {
     display: grid;
+
     grid-template-columns: 1fr 2fr;
     height: 100%;
     @apply gap-4;
+    @apply pl-4;
+    @apply pr-8;
+    @apply pb-4;
     /* @apply w-full; */
 
     .grid_column {
