@@ -57,4 +57,9 @@ onMounted(() => {
     @apply mb-4 text-lg font-semibold;
   }
 }
+@media (max-width: 1024px) {
+  .project_item_card_content {
+    padding: 1rem;
+  }
+}
 </style>

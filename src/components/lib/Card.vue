@@ -24,5 +24,9 @@
     min-width: 100%;
     /* REVIEW esse 80vw foi para deixar o card "certinho" quando em dispositivo móvel */
   }
+
+  .card-body {
+    --padding-card: 1rem;
+  }
 }
 </style>
