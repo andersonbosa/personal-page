@@ -1,11 +1,15 @@
 <script lang="ts" setup>
 import type { ParsedRepo } from '@/types'
 
-defineProps({
+const props = defineProps({
   project: {
     type: Object as () => ParsedRepo,
     required: true,
   },
+})
+
+onMounted(() => {
+  console.log(props.project)
 })
 </script>
 
@@ -14,12 +18,21 @@ defineProps({
     <div class="project_item_card">
       <div class="project_item_top_border"></div>
       <div class="project_item_card_content">
-        <h4>{{ project.name }}</h4>
+        <a :href="project.url">
+          <h4>{{ project.name }}</h4>
+        </a>
+
         <hr />
-        <p class="mt-4">
-          <img class="inline-block h-7 w-7 pr-2" src="/images/quote_symbol.svg" />
-          Lorem ipsum dolor sit amet eos adipisci, consectetur adipisicing elit.
-        </p>
+
+        <section class="mt-4">
+          <p v-if="project.description">
+            <img class="inline-block h-5 w-5 pr-2" src="/images/quote_symbol.svg" />
+            {{ project.description }}
+          </p>
+          <p v-else>
+            Created at: {{ project.createdAt }}
+          </p>
+        </section>
       </div>
     </div>
   </div>
@@ -37,10 +50,11 @@ defineProps({
 }
 .project_item_card_content {
   word-wrap: break-word;
+
   @apply p-6 w-full h-full;
 
   h4 {
-    @apply mb-4 text-xl font-semibold;
+    @apply mb-4 text-lg font-semibold;
   }
 }
 </style>
