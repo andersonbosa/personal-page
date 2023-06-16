@@ -41,5 +41,9 @@ defineProps({
   word-wrap: break-word;
 }
 
-/* ... */
+@media (max-width: 1024px) {
+  .project_item_card_content {
+    padding: 1rem;
+  }
+}
 </style>
