@@ -12,7 +12,6 @@ export class GithubProjectManager {
   async parseGithubRepositories (): Promise<ParsedRepo> {
     const repos = await this.queryGithubRepositoriesByUser()
     return repos
-      .filter((repo: any) => repo.name !== this.username)
       .map((repo: any) => this.parseRepoToShow(repo))
   }
 
@@ -49,8 +48,6 @@ export class GithubProjectManager {
     return new Date(date).toLocaleDateString('pt-BR', options)
   }
 }
-
-
 
 export async function parseGithubRepositories (username: any): Promise<any> {
   const repos = await queryGithubRepositoriesByUser(username)
@@ -93,35 +90,4 @@ function formatDate (date: string): string {
   const options = { timeZone: 'America/Sao_Paulo' }
   return new Date(date)
     .toLocaleDateString('pt-BR', options)
-}
-
-export function generateShadesOfGrayBackgroundColor (): string {
-  const randomShade = Math.floor(Math.random() * 256)
-  const grayColor = `rgb(${randomShade}, ${randomShade}, ${randomShade})`
-
-  const isDarker = randomShade < 100
-  if (isDarker) {
-    return generateShadesOfGrayBackgroundColor()
-  }
-
-  return grayColor
-}
-
-export function invertFontColor (backgroundColor: any): any {
-  if (!backgroundColor) {
-    return backgroundColor
-  }
-
-  const sanitizedColorNumber = Number(
-    backgroundColor
-      ?.replace(/^rgb\(/, '')
-      ?.replace(/\)$/, '')
-      ?.split(',')[0]
-  )
-
-  if (sanitizedColorNumber > 200) {
-    return 'inherit'
-  }
-
-  return 'white'
 }
