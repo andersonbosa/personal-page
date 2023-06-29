@@ -18,7 +18,7 @@ const _props = defineProps({
     >
       <div class="collapse-title">
         <p>
-          <span class="font-bold">
+          <span class="job_title">
             {{ item.jobTitle }}
           </span>
           at
@@ -57,6 +57,11 @@ section {
 
 h3 {
   @apply mb-2 label-text-alt italic;
+}
+.collapse-title {
+  border: 2px solid red;
+  @apply text-gray-800;
+  @apply dark:text-gray-50;
 }
 /* ... */
 </style>
