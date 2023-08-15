@@ -59,7 +59,6 @@ h3 {
   @apply mb-2 label-text-alt italic;
 }
 .collapse-title {
-  border: 2px solid red;
   @apply text-gray-800;
   @apply dark:text-gray-50;
 }
