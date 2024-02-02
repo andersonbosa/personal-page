@@ -1,5 +1,6 @@
 'use client'
 
+import { INITIAL_DARK_THEME_STATE, INITIAL_LIGHT_THEME_STATE } from '@/constants'
 import { Theme, useTheme } from '@/contexts/ThemeContext'
 
 interface ThemeToggleProps { }
@@ -13,12 +14,12 @@ const ThemeToggle: React.FC<ThemeToggleProps> = () => {
   }
 
   const handleToggleTheme = () => {
-    toggleTheme('light', 'dark')
+    toggleTheme(INITIAL_LIGHT_THEME_STATE, INITIAL_DARK_THEME_STATE)
   }
 
   return (
-    <div className='scale-[0.7] '>
-      <label className="swap swap-rotate">
+    <div className='scale-[0.70] btn btn-ghost px-6 '>
+      <label className="swap swap-rotate x">
         {/* this hidden checkbox controls the state */}
         <input type="checkbox" className="theme-controller" onChange={handleToggleTheme} />
         {/* sun icon */}

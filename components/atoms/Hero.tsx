@@ -11,7 +11,6 @@ const Hero: React.FC<HeroProps> = () => {
           className="hero-overlay bg-opacity-35"
           style={{
             backdropFilter: 'blur(8px)',
-            boxShadow: '0 0 20px rgba(0, 0, 0, 0.5)'
           }}
         >
 

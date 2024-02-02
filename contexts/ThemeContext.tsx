@@ -1,11 +1,14 @@
 'use client'
 
+import { INITIAL_LIGHT_THEME_STATE } from '@/constants'
 import { ProviderProps } from '@/types'
 import { createContext, useContext, useEffect, useState } from 'react'
 
 // Constants for localStorage and HTML attribute keys
 const LOCAL_STORAGE_KEY = 'theme'
 const HTML_THEME_KEY = 'data-theme'
+
+const INITIAL_THEME_STATE: Theme = INITIAL_LIGHT_THEME_STATE
 
 // Type definition for possible themes
 export type Theme = "light" | "dark" | "cupcake" | "bumblebee" | "emerald" | "corporate" | "synthwave" | "retro" | "cyberpunk" | "valentine" | "halloween" | "garden" | "forest" | "aqua" | "lofi" | "pastel" | "fantasy" | "wireframe" | "black" | "luxury" | "dracula" | "cmyk" | "autumn" | "business" | "acid" | "lemonade" | "night" | "coffee" | "winter" | "dim" | "nord" | "sunset"
@@ -27,11 +30,9 @@ interface ThemeProviderProps extends ProviderProps { }
 
 // React component for managing the theme state and providing it through context
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  // Default theme when no theme is stored
-  const INITIAL_STATE: Theme = 'light'
 
   // State hook to manage the current theme
-  const [theme, setTheme] = useState<Theme>(INITIAL_STATE)
+  const [theme, setTheme] = useState<Theme>(INITIAL_THEME_STATE)
 
   // Function to update the theme state, set the theme on the HTML element, and store it in local storage
   const handleSetTheme = (newTheme: Theme) => {
@@ -47,7 +48,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     () => {
       const getStoredTheme = () => {
         const storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY)
-        return storedTheme ? (storedTheme as Theme) : INITIAL_STATE
+        return storedTheme ? (storedTheme as Theme) : INITIAL_THEME_STATE
       }
 
       handleSetTheme(getStoredTheme())
