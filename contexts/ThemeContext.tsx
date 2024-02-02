@@ -8,7 +8,7 @@ const LOCAL_STORAGE_KEY = 'theme'
 const HTML_THEME_KEY = 'data-theme'
 
 // Type definition for possible themes
-export type Theme = 'light' | 'dark' | 'retro'
+export type Theme = "light" | "dark" | "cupcake" | "bumblebee" | "emerald" | "corporate" | "synthwave" | "retro" | "cyberpunk" | "valentine" | "halloween" | "garden" | "forest" | "aqua" | "lofi" | "pastel" | "fantasy" | "wireframe" | "black" | "luxury" | "dracula" | "cmyk" | "autumn" | "business" | "acid" | "lemonade" | "night" | "coffee" | "winter" | "dim" | "nord" | "sunset"
 
 // Type definition for the structure of the theme context
 interface ThemeContextProps {
@@ -30,25 +30,31 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // Default theme when no theme is stored
   const INITIAL_STATE: Theme = 'light'
 
-  // Retrieve the stored theme from local storage
-  const storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY)
-
   // State hook to manage the current theme
-  const [theme, setTheme] = useState<Theme>(storedTheme ? (storedTheme as Theme) : INITIAL_STATE)
+  const [theme, setTheme] = useState<Theme>(INITIAL_STATE)
 
   // Function to update the theme state, set the theme on the HTML element, and store it in local storage
   const handleSetTheme = (newTheme: Theme) => {
     setTheme(newTheme)
-    document.querySelector('html')?.setAttribute(HTML_THEME_KEY, newTheme)
-    localStorage.setItem(LOCAL_STORAGE_KEY, newTheme)
+
+    // Updates the location only on the customer side
+    window?.document.querySelector('html')?.setAttribute(HTML_THEME_KEY, newTheme)
+    window?.localStorage.setItem(LOCAL_STORAGE_KEY, newTheme)
   }
 
   // Effect hook to check for a stored theme when the component mounts and set it if available
-  useEffect(() => {
-    if (storedTheme) {
-      setTheme(storedTheme as Theme)
-    }
-  }, [])
+  useEffect(
+    () => {
+      const getStoredTheme = () => {
+        const storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY)
+        return storedTheme ? (storedTheme as Theme) : INITIAL_STATE
+      }
+
+      handleSetTheme(getStoredTheme())
+    },
+    []
+  )
+
 
   // Render the ThemeProvider component with its children wrapped by the ThemeContext.Provider
   return (
