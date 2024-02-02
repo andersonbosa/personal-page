@@ -9,7 +9,6 @@ const ThemeToggle: React.FC<ThemeToggleProps> = () => {
 
   const toggleTheme = (someTheme: Theme, anotherTheme: Theme) => {
     const newTheme = theme === someTheme ? anotherTheme : someTheme
-    console.log(theme, newTheme)
     setTheme(newTheme)
   }
 
