@@ -3,10 +3,10 @@
 interface HeroProps { }
 
 const Hero: React.FC<HeroProps> = () => {
-  const backgroundImage = 'url(hero-bg2.jpg)'
+  const backgroundImage = 'url(assets/hero-bg2.jpg)'
   return (
     <>
-      <div className="hero min-h-screen " style={{ backgroundImage, }}>
+      <div className="hero min-h-screen" style={{ backgroundImage, }}>
         <div
           className="hero-overlay bg-opacity-35"
           style={{

@@ -1,6 +1,6 @@
 'use client'
 
-import { INITIAL_LIGHT_THEME_STATE } from '@/constants'
+import { INITIAL_DARK_THEME_STATE, INITIAL_LIGHT_THEME_STATE } from '@/constants'
 import { ProviderProps } from '@/types'
 import { createContext, useContext, useEffect, useState } from 'react'
 
@@ -11,7 +11,7 @@ const HTML_THEME_KEY = 'data-theme'
 const INITIAL_THEME_STATE: Theme = INITIAL_LIGHT_THEME_STATE
 
 // Type definition for possible themes
-export type Theme = "light" | "dark" | "cupcake" | "bumblebee" | "emerald" | "corporate" | "synthwave" | "retro" | "cyberpunk" | "valentine" | "halloween" | "garden" | "forest" | "aqua" | "lofi" | "pastel" | "fantasy" | "wireframe" | "black" | "luxury" | "dracula" | "cmyk" | "autumn" | "business" | "acid" | "lemonade" | "night" | "coffee" | "winter" | "dim" | "nord" | "sunset"
+export type Theme = "system" | "light" | "dark" | "cupcake" | "bumblebee" | "emerald" | "corporate" | "synthwave" | "retro" | "cyberpunk" | "valentine" | "halloween" | "garden" | "forest" | "aqua" | "lofi" | "pastel" | "fantasy" | "wireframe" | "black" | "luxury" | "dracula" | "cmyk" | "autumn" | "business" | "acid" | "lemonade" | "night" | "coffee" | "winter" | "dim" | "nord" | "sunset"
 
 // Type definition for the structure of the theme context
 interface ThemeContextProps {
@@ -51,7 +51,24 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         return storedTheme ? (storedTheme as Theme) : INITIAL_THEME_STATE
       }
 
-      handleSetTheme(getStoredTheme())
+      const storedTheme = getStoredTheme()
+
+      if (storedTheme === 'system') {
+        /**
+         * @see note
+         * It is not necessary to manually change the themebecause the framework
+         * already takes care of this when we use the "system" class.
+         */
+        // const isDarkModePrefered = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        // if (isDarkModePrefered) {
+        //   return handleSetTheme(INITIAL_DARK_THEME_STATE)
+        // } else {
+        //   return handleSetTheme(INITIAL_LIGHT_THEME_STATE)
+        // }
+        return
+      }
+
+      handleSetTheme(storedTheme)
     },
     []
   )
