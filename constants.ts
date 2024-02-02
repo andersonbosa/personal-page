@@ -9,12 +9,12 @@ export const AVAIABLE_LANGUAGES: LanguageItem[] = [
     id: 'en-US',
     label: 'English',
     icon: 'usa',
+    default: true
   },
   {
     id: 'pt-BR',
     label: 'Português',
     icon: 'brazil',
-    default: true
   },
 ]
 

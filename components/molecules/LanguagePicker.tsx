@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import TranslatorBtn from '../atoms/Icons/TranslatorBtn'
-import Image from 'next/image'
 import { LanguageItem } from '@/types'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import Dropdown from '../atoms/Dropdown'
+import TranslatorBtn from '../atoms/Icons/TranslatorBtn'
 
 interface LanguagePickerProps {
   availableLanguages: LanguageItem[]
@@ -18,7 +18,6 @@ const LanguagePicker: React.FC<LanguagePickerProps> = ({ availableLanguages }) =
     setSelectedLanguage(language)
     // Adicione qualquer lógica adicional aqui, como trocar a tradução da página
   }
-
 
   useEffect(
     () => {
