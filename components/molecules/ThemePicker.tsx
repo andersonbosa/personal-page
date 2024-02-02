@@ -20,7 +20,7 @@ const ThemePicker: React.FC<ThemePickerProps> = ({ availableThemes }) => {
         <input
           type="radio"
           name="theme-dropdown"
-          className={`theme-controller btn btn-sm btn-block btn-ghost justify-start font-[sans-serif]`}
+          className={'theme-controller btn btn-sm btn-block btn-ghost justify-start font-[sans-serif]'}
           aria-label={titleCase(optionTheme)}
           value={optionTheme}
           onClick={() => handlePickTheme(optionTheme as Theme)}

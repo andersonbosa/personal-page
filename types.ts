@@ -4,16 +4,16 @@ export interface ProviderProps {
   children: ReactNode
 }
 
+export type LocaleID = "en-us" | "pt-br" | 'it'
+
 export interface LanguageItem {
-  id: string
+  id: LocaleID
   label: string
   icon: string
   default?: boolean
 }
 
-export type Locale = "en-us" | "pt-br"
-
 export type i18nConfig = {
-  locales: Locale[]
-  defaultLocale: Locale
+  locales: string[]
+  defaultLocale: LocaleID
 }

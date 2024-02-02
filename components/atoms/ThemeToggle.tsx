@@ -13,6 +13,7 @@ const ThemeToggle: React.FC<ThemeToggleProps> = () => {
     setTheme(newTheme)
   }
 
+  /* //REFACTOR make both vars become props */
   const handleToggleTheme = () => {
     toggleTheme(INITIAL_LIGHT_THEME_STATE, INITIAL_DARK_THEME_STATE)
   }

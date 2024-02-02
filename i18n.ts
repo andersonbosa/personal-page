@@ -1,14 +1,12 @@
 
 import { getRequestConfig } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { AVAIABLE_LANGUAGES } from './constants'
 import { i18nConfig } from './types'
 
 export const i18nConfiguration: i18nConfig = {
-  locales: [
-    "en-us",
-    "pt-br"
-  ],
-  defaultLocale: 'en-us'
+  locales: AVAIABLE_LANGUAGES.map(({ id }) => id),
+  defaultLocale: AVAIABLE_LANGUAGES.find(langItem => langItem.default)?.id ?? 'en-us'
 }
 
 export default getRequestConfig(async ({ locale }) => {

@@ -2,28 +2,40 @@
 
 import { LanguageItem } from '@/types'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
+
 import Dropdown from '../atoms/Dropdown'
 import TranslatorBtn from '../atoms/Icons/TranslatorBtn'
+import { redirect,  usePathname } from 'next/navigation'
+import { updateUrlLocale } from '@/utils'
 
 interface LanguagePickerProps {
   availableLanguages: LanguageItem[]
 }
 
 const LanguagePicker: React.FC<LanguagePickerProps> = ({ availableLanguages }) => {
-  const [selectedLanguage, setSelectedLanguage] = useState<LanguageItem | null>(null)
+  const t = useTranslations('LocaleSwitcher')
+  const currentPathname = usePathname()
+  const [currentLocale, setCurrentLocale] = useState<string | undefined>(useLocale())
 
   const handleLanguageChange = (language: LanguageItem) => {
-    // Lógica para alterar a linguagem selecionada
-    setSelectedLanguage(language)
-    // Adicione qualquer lógica adicional aqui, como trocar a tradução da página
+    setCurrentLocale(language.id)
+
+    const newUrl = updateUrlLocale(currentPathname, language.id)
+
+    console.log('handleLanguageChange', newUrl, currentPathname, language.id)
+
+    window.location.pathname = language.id
   }
 
   useEffect(
     () => {
       // Your logic to set the default language on app load
-      // Use setSelectedLanguage to update the default language
-      // Example: setSelectedLanguage(findLanguageById(defaultLanguage));
+      // Use setCurrentLocale to update the default language
+      // Example: setCurrentLocale(findLanguageById(defaultLanguage));
+      // setCurrentLocale(currentLocale)
     },
     [] // Run once on component mount
   )
@@ -32,8 +44,9 @@ const LanguagePicker: React.FC<LanguagePickerProps> = ({ availableLanguages }) =
     return (
       <li key={language.id} tabIndex={index + 1}>
         <button
-          className={selectedLanguage?.id === language.id ? 'active' : ''}
+          className={currentLocale === language.id ? 'active' : ''}
           onClick={() => handleLanguageChange(language)}
+          title={t('switchLocale', { locale: language.label })}
         >
           <span className="opacity-70">
             <Image src={`assets/icons/flags/${language.icon}.svg`} width={24} height={24} alt={`${language.label} flag`} />

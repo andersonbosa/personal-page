@@ -1,5 +1,8 @@
 {
   "Hero": {
     "title": "Olá Mundo!"
+  },
+  "LocaleSwitcher": {
+    "switchLocale": "Trocar o idioma para {locale}."
   }
 }
