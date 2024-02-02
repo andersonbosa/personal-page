@@ -1,8 +1,12 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
+
 interface HeroProps { }
 
 const Hero: React.FC<HeroProps> = () => {
+  const t = useTranslations('Hero')
+
   const backgroundImage = 'url(assets/hero-bg2.jpg)'
   return (
     <>
@@ -17,7 +21,7 @@ const Hero: React.FC<HeroProps> = () => {
         </div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+            <h1 className="mb-5 text-5xl font-bold">{t('title')}</h1>
             <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
             <button className="btn btn-primary">Get Started</button>
           </div>

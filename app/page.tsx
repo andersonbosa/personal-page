@@ -1,9 +1,7 @@
-import Hero from '@/components/atoms/Hero'
+import { i18nConfiguration } from '@/i18n'
+import { redirect } from 'next/navigation'
 
-export default function Home () {
-  return (
-    <main className="flex  flex-col items-center justify-between md:p-4">
-      <Hero />
-    </main>
-  )
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage () {
+  redirect(`/${i18nConfiguration.defaultLocale}`)
 }

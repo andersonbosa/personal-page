@@ -10,3 +10,10 @@ export interface LanguageItem {
   icon: string
   default?: boolean
 }
+
+export type Locale = "en-us" | "pt-br"
+
+export type i18nConfig = {
+  locales: Locale[]
+  defaultLocale: Locale
+}
