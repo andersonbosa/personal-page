@@ -6,15 +6,15 @@ export const INITIAL_DARK_THEME_STATE: Theme = 'dracula'
 
 export const AVAIABLE_LANGUAGES: LanguageItem[] = [
   {
+    id: 'en-US',
+    label: 'English',
+    icon: 'usa',
+  },
+  {
     id: 'pt-BR',
     label: 'Português',
     icon: 'brazil',
     default: true
-  },
-  {
-    id: 'en-US',
-    label: 'English',
-    icon: 'usa',
   },
 ]
 

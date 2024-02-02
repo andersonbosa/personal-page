@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import TranslatorBtn from '../atoms/Icons/TranslatorBtn'
 import Image from 'next/image'
 import { LanguageItem } from '@/types'
+import Dropdown from '../atoms/Dropdown'
 
 interface LanguagePickerProps {
   availableLanguages: LanguageItem[]
@@ -48,17 +49,11 @@ const LanguagePicker: React.FC<LanguagePickerProps> = ({ availableLanguages }) =
   }
 
   return (
-    <>
-      <div className="dropdown dropdown-end">
-        <div tabIndex={0} role="button" >
-          <TranslatorBtn />
-        </div>
-
-        <ul className="menu menu-sm gap-1 dropdown-content z-[1] -- bg-base-200 text-base-content -- top-px mt-16 max-h-[calc(100vh-10rem)] w-56 overflow-y-auto -- rounded-box border border-white/5 shadow-2xl outline outline-1 outline-black/5">
-          {availableLanguages.map(createLanguageListItem)}
-        </ul>
-      </div>
-    </>
+    <Dropdown
+      additionalClassName='dropdown-end'
+      buttonContent={<TranslatorBtn />}
+      menuContent={<>{availableLanguages.map(createLanguageListItem)}</>}
+    />
   )
 }
 
