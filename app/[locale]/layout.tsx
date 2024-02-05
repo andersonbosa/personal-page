@@ -1,12 +1,13 @@
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
+import { Inter } from 'next/font/google'
 
+import Footer from '@/components/atoms/Footer'
+import ConfigFloatingButton from '@/components/molecules/ConfigFloatingButton'
 import Navbar from '@/components/molecules/Navbar'
 import { ThemeProvider } from '@/contexts/ThemeContext'
-import StoreProvider from '../  StoreProvider'
-import ConfigFloatingButton from '@/components/molecules/ConfigFloatingButton'
+import StoreProvider from '../StoreProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,6 +41,7 @@ export default function LocaleLayout (
               <Navbar />
               {children}
               <ConfigFloatingButton />
+              <Footer />
             </ThemeProvider>
           </NextIntlClientProvider>
         </StoreProvider>
