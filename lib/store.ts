@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import counterReducer from './features/counter/counterSlice'
+import configButtonSlice from './features/configButton/configButtonSlice'
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      counter: counterReducer
+      counter: counterReducer,
+      configButton: configButtonSlice,
     }
   })
 }
