@@ -5,8 +5,8 @@ import { NextIntlClientProvider, useMessages } from 'next-intl'
 
 import Navbar from '@/components/molecules/Navbar'
 import { ThemeProvider } from '@/contexts/ThemeContext'
-import Loading from './loading'
-import { Suspense } from 'react'
+import StoreProvider from '../  StoreProvider'
+import ConfigFloatingButton from '@/components/molecules/ConfigFloatingButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +16,6 @@ interface RootLayoutProps {
 }
 
 export async function generateMetadata ({ }: Omit<RootLayoutProps, 'children'>): Promise<Metadata> {
-
   return {
     title: 'Anderson Bosa | Software Engineer - Penetration Tester - Bachelor in Information Systems',
     description: 'Anderson has been an active software engineer since 2019. Enthusiast at Leadership, Ethical Hacking and Red Teams Operations, Anderson seeks excellence in his career by focusing on interdisciplinary learning.',
@@ -35,13 +34,16 @@ export default function LocaleLayout (
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
-            <Navbar />
-            {children}
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <StoreProvider>
+          <NextIntlClientProvider messages={messages}>
+            <ThemeProvider>
+              <Navbar />
+              {children}
+              <ConfigFloatingButton />
+            </ThemeProvider>
+          </NextIntlClientProvider>
+        </StoreProvider>
       </body>
-    </html >
+    </html>
   )
 }
