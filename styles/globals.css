@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {}
+:root {
+  --navbar-height: 64px;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {}
