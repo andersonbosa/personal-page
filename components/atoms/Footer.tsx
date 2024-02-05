@@ -1,8 +1,7 @@
 'use client'
 
-import Link from 'next/link'
-import LucideIcon, { LucideIconType } from './LucideIcon'
 import { MY_CONTACTS } from '@/constants'
+import ContactsDisplay from '../molecules/ContactsDisplay'
 
 interface FooterProps { }
 
@@ -15,11 +14,7 @@ const Footer: React.FC<FooterProps> = () => {
       <footer className="footer footer-center p-10 -- bg-primary text-primary-content">
         <nav>
           <div className="grid grid-flow-col gap-4">
-            {MY_CONTACTS.map((contact, index) => (
-              <Link key={index} href={contact.hrefBuilder(contact.contact)} title={contact.label} target='_blank'>
-                <LucideIcon additionalClassName='text-primary-content -- btn btn-ghost' name={contact.lucideIcon as LucideIconType} />
-              </Link>
-            ))}
+            <ContactsDisplay contacts={MY_CONTACTS} />
           </div>
         </nav>
         <aside>
