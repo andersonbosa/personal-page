@@ -1,6 +1,6 @@
 'use client'
 
-import { INITIAL_DARK_THEME_STATE, INITIAL_LIGHT_THEME_STATE } from '@/constants'
+import { INITIAL_LIGHT_THEME_STATE } from '@/constants'
 import { ProviderProps } from '@/types'
 import { createContext, useContext, useEffect, useState } from 'react'
 
@@ -17,6 +17,7 @@ export type Theme = 'system' | 'light' | 'dark' | 'cupcake' | 'bumblebee' | 'eme
 interface ThemeContextProps {
   theme: Theme
   setTheme: (theme: Theme) => void
+  isLightTheme: boolean
 }
 
 // Type definition for a context that may contain ThemeContextProps or be undefined
@@ -30,17 +31,20 @@ interface ThemeProviderProps extends ProviderProps { }
 
 // React component for managing the theme state and providing it through context
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-
   // State hook to manage the current theme
   const [theme, setTheme] = useState<Theme>(INITIAL_THEME_STATE)
+  const [isLightTheme, setIsLightTheme] = useState<boolean>(theme === INITIAL_LIGHT_THEME_STATE)
 
   // Function to update the theme state, set the theme on the HTML element, and store it in local storage
   const handleSetTheme = (newTheme: Theme) => {
     setTheme(newTheme)
+    // setIsLightTheme(newTheme === INITIAL_LIGHT_THEME_STATE)
 
     // Updates the location only on the customer side
     window?.document.querySelector('html')?.setAttribute(HTML_THEME_KEY, newTheme)
     window?.localStorage.setItem(LOCAL_STORAGE_KEY, newTheme)
+
+    console.log('handleSetTheme', theme,  isLightTheme, newTheme )
   }
 
   // Effect hook to check for a stored theme when the component mounts and set it if available
@@ -68,6 +72,8 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         return
       }
 
+      console.log('handleSetTheme', theme, isLightTheme, storedTheme )
+
       handleSetTheme(storedTheme)
     },
     []
@@ -76,7 +82,11 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   // Render the ThemeProvider component with its children wrapped by the ThemeContext.Provider
   return (
-    <ThemeContext.Provider value={{ theme, setTheme: handleSetTheme }}>
+    <ThemeContext.Provider value={{
+      theme,
+      isLightTheme,
+      setTheme: handleSetTheme
+    }}>
       {children}
     </ThemeContext.Provider>
   )
