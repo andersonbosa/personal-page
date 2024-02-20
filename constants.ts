@@ -1,8 +1,14 @@
 import { Theme } from '@/contexts/ThemeContext'
 import { LanguageItem } from '@/types'
+import appConfiguration from './config'
 
-export const INITIAL_LIGHT_THEME_STATE: Theme = 'pastel'
-export const INITIAL_DARK_THEME_STATE: Theme = 'dracula'
+
+export const INITIAL_LIGHT_THEME_STATE: Theme = appConfiguration.themes.options.light
+export const INITIAL_DARK_THEME_STATE: Theme = appConfiguration.themes.options.dark
+
+export const AVAILABLE_PICKER_THEMES = [
+  'light', 'retro', 'dracula', 'dark'
+]
 
 export const AVAIABLE_LANGUAGES: LanguageItem[] = [
   {
@@ -21,10 +27,6 @@ export const AVAIABLE_LANGUAGES: LanguageItem[] = [
     label: 'Portuguese',
     icon: 'brazil',
   },
-]
-
-export const AVAILABLE_THEMES = [
-  'pastel', 'retro', 'dracula', 'dark'
 ]
 
 interface MyContact {
