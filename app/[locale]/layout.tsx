@@ -16,25 +16,24 @@ interface RootLayoutProps {
   params: { locale: string }
 }
 
-export async function generateMetadata ({ }: Omit<RootLayoutProps, 'children'>): Promise<Metadata> {
+export async function generateMetadata({ }: Omit<RootLayoutProps, 'children'>): Promise<Metadata> {
   return {
     title: 'Anderson Bosa | Software Engineer - Penetration Tester - Bachelor in Information Systems',
     description: 'Anderson has been an active software engineer since 2019. Enthusiast at Leadership, Ethical Hacking and Red Teams Operations, Anderson seeks excellence in his career by focusing on interdisciplinary learning.',
   }
 }
 
-export default function LocaleLayout (
+export default function LocaleLayout(
   {
     children,
     params: { locale }
-
   }: Readonly<RootLayoutProps>
 ) {
   const messages = useMessages()
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-base-100 text-base-content`}>
         <StoreProvider>
           <NextIntlClientProvider messages={messages}>
             <ThemeProvider>
