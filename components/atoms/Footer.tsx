@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = () => {
           </div>
         </nav>
         <aside>
-          <p>Copyright © {sinceYear} - {currentYear} - All right reserved</p>
+          <p>ANB | Copyright © {sinceYear} - {currentYear} | All right reserved.</p>
         </aside>
       </footer>
     </>

@@ -11,7 +11,7 @@ interface LucideIconProps {
 
 const LucideIcon: React.FC<LucideIconProps> = ({
   name,
-  additionalClassName = 'text-primary',
+  additionalClassName = 'text-black',
   size = 32
 }) => {
   const NamedLucideIcon = icons[name]
@@ -20,9 +20,11 @@ const LucideIcon: React.FC<LucideIconProps> = ({
   }
 
   return (
-    <span className={additionalClassName}>
-      <NamedLucideIcon size={size} />
-    </span>
+    <>
+      <span className={additionalClassName}>
+        <NamedLucideIcon size={size} />
+      </span>
+    </>
   )
 }
 
