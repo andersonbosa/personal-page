@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = () => {
             aut repudiandae et a id nisi.
           </p>
           <div className="mb-5 -- flex justify-between flex-wrap gap-y-[1rem] " >
-            <ContactsDisplay contacts={MY_CONTACTS} className='bg-neutral text-neutral-content' />
+            <ContactsDisplay contacts={MY_CONTACTS} className='bg-neutral text-base-100' />
           </div>
 
           <br />
