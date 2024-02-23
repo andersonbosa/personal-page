@@ -2,6 +2,7 @@ import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react';
 
 import Footer from '@/components/atoms/Footer'
 import ConfigFloatingButton from '@/components/molecules/ConfigFloatingButton'
@@ -41,6 +42,7 @@ export default function LocaleLayout(
               {/* <ConfigFloatingButton /> */}
               {children}
               <Footer />
+              <Analytics />
             </ThemeProvider>
           </NextIntlClientProvider>
         </StoreProvider>
