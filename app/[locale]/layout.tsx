@@ -38,7 +38,7 @@ export default function LocaleLayout(
           <NextIntlClientProvider messages={messages}>
             <ThemeProvider>
               <Navbar />
-              <ConfigFloatingButton />
+              {/* <ConfigFloatingButton /> */}
               {children}
               <Footer />
             </ThemeProvider>

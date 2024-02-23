@@ -4,5 +4,12 @@
   },
   "LocaleSwitcher": {
     "switchLocale": "Trocar o idioma para {locale}."
+  },
+  "AboutMe": {
+    "title": "Sobre mim",
+    "content": "Em minha função mais recente na Conviso como Engenheiro de Software Backend, onde passei um ano e meio, aprimorei minhas habilidades de resolução de problemas, otimização de serviços, desenvolvimento de APIs e liderança na manutenção de sistemas críticos. Anteriormente, ainda na Conviso como Analista de Segurança, eu adquiri experiência em auditorias automatizadas e manuais de sistemas web, móveis e redes. Também conduzi de forma solo, como Penetration Tester, projetos para amadurecer a maturidade da segurança das aplicações de nossos usuários, realizando avaliação das vulnerabilidades encontradas e auxiliando na correção ou mitigação dessas."
+  },
+  "UnderConstruction": {
+    "title": "Em construção..."
   }
 }

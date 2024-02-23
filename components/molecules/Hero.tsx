@@ -3,10 +3,10 @@
 import { MY_CONTACTS } from '@/constants'
 import { useTranslations } from 'next-intl'
 
-import LucideIcon, { LucideIconType } from '@/components/atoms/LucideIcon'
+import LucideIcon from '@/components/atoms/LucideIcon'
 import ContactsDisplay from '@/components/molecules/ContactsDisplay'
-import next from 'next'
-import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import TypewriterText from '../atoms/TypewriterText'
 
 interface HeroProps { }
 
@@ -25,22 +25,23 @@ const Hero: React.FC<HeroProps> = () => {
   }
 
   return (
-    <div className="hero  " style={{ height: 'calc(100vh - var(--navbar-height))' }}>
+    <div className="hero " style={{ height: 'calc(100vh - var(--navbar-height))' }}>
       <div
         className="hero-overlay -- bg-base-100 "
       >
       </div>
       <div className="hero-content text-center">
         <div className="max-w-md">
-          <h1 className="mb-5 -- text-5xl font-bold -- text-primary">
+          <h1 className="mb-5 -- text-9xl font-bold -- text-primary">
             {t('title')}
           </h1>
-          <p className="mb-8">
-            Job titles animated. Provident cupiditate voluptatem et in. Quaerat fugiat ut
-            assumenda excepturi exercitationem quasi. In deleniti eaque
-            aut repudiandae et a id nisi.
-          </p>
-          <div className="mb-5 -- flex justify-between flex-wrap gap-y-[1rem] " >
+          <div className="mb-5 min-h-10" >
+            <TypewriterText
+              className="text-2xl -- text-base-content"
+              sentences={['Software Engineer', 'Security Analyst', 'Penetration Tester']}
+            />
+          </div>
+          <div className="mb-5 -- flex justify-between flex-wrap gap-[1rem] " >
             <ContactsDisplay contacts={MY_CONTACTS} className='bg-neutral text-base-100' />
           </div>
 
