@@ -3,7 +3,12 @@
     "title": "Olá Mundo!"
   },
   "LocaleSwitcher": {
-    "switchLocale": "Trocar o idioma para {locale}."
+    "switchLocale": "Trocar o idioma para {locale}.",
+    "languages": {
+      "en-us": "Inglês",
+      "it": "Italiano",
+      "pt-br": "Português"
+    }
   },
   "AboutMe": {
     "title": "Sobre mim",

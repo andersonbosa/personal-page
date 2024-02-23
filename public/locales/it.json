@@ -3,7 +3,12 @@
     "title": "Ciao mondo!"
   },
   "LocaleSwitcher": {
-    "switchLocale": "Passa a {locale}"
+    "switchLocale": "Passa a {locale}",
+    "languages": {
+      "en-us": "Inglese",
+      "it": "Italiano",
+      "pt-br": "Portoghese"
+    }
   },
   "AboutMe": {
     "title": "Ciao! Mi chiamo Anderson",

@@ -1,15 +1,14 @@
 'use client'
 
 import { LanguageItem } from '@/types'
+import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { useTranslations, useLocale } from 'next-intl'
 
+import { updateUrlLocale } from '@/utils'
+import { usePathname } from 'next/navigation'
 import Dropdown from '../atoms/Dropdown'
 import TranslatorBtn from '../atoms/Icons/TranslatorBtn'
-import { redirect,  usePathname } from 'next/navigation'
-import { updateUrlLocale } from '@/utils'
 
 interface LanguagePickerProps {
   availableLanguages: LanguageItem[]
@@ -51,7 +50,9 @@ const LanguagePicker: React.FC<LanguagePickerProps> = ({ availableLanguages }) =
           <span className="opacity-70">
             <Image src={`assets/icons/flags/${language.icon}.svg`} width={24} height={24} alt={`${language.label} flag`} />
           </span>
-          <span className="font-[sans-serif]">{language.label}</span>
+          <span className="font-[sans-serif]">
+            {t(`languages.${language.id}`)}
+          </span>
           <span className="badge badge-sm badge-outline !pl-1.5 !pr-1 pt-px font-mono !text-[.6rem] font-bold tracking-widest opacity-50">
             {language.id}
           </span>
