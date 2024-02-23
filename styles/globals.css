@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navbar-height: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {}
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-16px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bounce-animation {
+  animation: bounce 1.3s infinite;
+  animation-timing-function: ease-in-out;
+}

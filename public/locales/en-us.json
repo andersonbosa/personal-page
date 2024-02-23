@@ -1,0 +1,20 @@
+{
+  "Hero": {
+    "title": "Hello world!"
+  },
+  "LocaleSwitcher": {
+    "switchLocale": "Switch to {locale}",
+    "languages": {
+      "en-us": "English",
+      "it": "Italian",
+      "pt-br": "Portuguese"
+    }
+  },
+  "AboutMe": {
+    "title": "Hi! I'm Anderson",
+    "content": "In my most recent role at Conviso as a Backend Software Engineer, where I spent a year and a half, I enhanced my problem-solving skills, optimized services, developed APIs, and took a leadership role in maintaining critical systems. Previously, while at Conviso as a Security Analyst, I gained experience in automated and manual audits of web, mobile, and network systems. I also independently conducted Penetration Tester projects to enhance the security maturity of our users' applications, assessing vulnerabilities and assisting in the correction or mitigation of these issues."
+  },
+  "UnderConstruction": {
+    "title": "Under construction..."
+  }
+}
