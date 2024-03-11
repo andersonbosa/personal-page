@@ -16,6 +16,5 @@ export default function RootLayout ({ children, }: Readonly<RootLayoutProps>) {
   return <>
     {children}
     <GoogleAnalytics gaId={myGTMID} />
-    <GoogleTagManager gtmId={myGTMID} />
   </>
 }
