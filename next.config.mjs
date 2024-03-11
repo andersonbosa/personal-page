@@ -8,7 +8,14 @@ const nextConfig = {
   // transpilePackages: ['lucide-react']
 
   images: {
-    domains: ['github.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+        port: '',
+        pathname: '/**',
+      }
+    ]
   }
 }
 
