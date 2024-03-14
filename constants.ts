@@ -38,12 +38,6 @@ interface MyContact {
 
 export const MY_CONTACTS: MyContact[] = [
   {
-    label: 'WhatsApp',
-    lucideIcon: 'Phone',
-    contact: '48988142547',
-    hrefBuilder: (phoneNumber: string) => `https://api.whatsapp.com/send/?phone=55${phoneNumber}&text=Hello%20Anderson!&type=phone_number&app_absent=1`,
-  },
-  {
     label: 'Email',
     lucideIcon: 'Mail',
     contact: 'andersonbosa0@gmail.com',
