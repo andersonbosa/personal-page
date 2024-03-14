@@ -5,16 +5,18 @@
 //   title: "Anderson Bosa | Software Engineer - Penetration Tester - Bachelor in Information Systems",
 //   description: "Anderson has been an active software engineer since 2019. Enthusiast at Leadership, Ethical Hacking and Red Teams Operations, Anderson seeks excellence in his career by focusing on interdisciplinary learning.",
 // }
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import appConfiguration from '@/config'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export default function RootLayout ({ children, }: Readonly<RootLayoutProps>) {
-  const myGTMID = 'G-VEBF97CRFK'
+const googleAnalyticsID = appConfiguration.integrations?.google?.analytics?.id || ''
+
+export default function RootLayout({ children, }: Readonly<RootLayoutProps>) {
   return <>
     {children}
-    <GoogleAnalytics gaId={myGTMID} />
+    <GoogleAnalytics gaId={googleAnalyticsID} />
   </>
 }
