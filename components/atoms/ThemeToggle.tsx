@@ -4,6 +4,8 @@ import { INITIAL_DARK_THEME_STATE, INITIAL_LIGHT_THEME_STATE } from '@/constants
 import { Theme, useTheme } from '@/contexts/ThemeContext'
 import SunIcon from './Icons/SunIcon'
 import MoonIcon from './Icons/MoonIcon'
+import React from 'react'
+import Button from './Button'
 
 interface ThemeToggleProps { }
 
@@ -12,9 +14,8 @@ const ThemeToggle: React.FC<ThemeToggleProps> = () => {
 
   const toggleTheme = (someTheme: Theme, anotherTheme: Theme) => {
     const newTheme = theme === someTheme ? anotherTheme : someTheme
-
-    console.log( theme, someTheme, isLightTheme, newTheme )
     setTheme(newTheme)
+    // console.log('components/atoms/ThemeToggle.tsx',theme, someTheme, isLightTheme, newTheme)
   }
 
   const handleToggleTheme = () => {
@@ -22,13 +23,11 @@ const ThemeToggle: React.FC<ThemeToggleProps> = () => {
   }
 
   return (
-    <div role="button" className="btn btn-ghost">
-      <label className="swap swap-rotate scale-[0.60]">
-        <input type="checkbox" className="theme-controller" onChange={handleToggleTheme} />
-        <SunIcon swapState={isLightTheme} />
-        <MoonIcon swapState={!isLightTheme} />
-      </label>
-    </div>
+    <label id="theme-toggler" className="swap swap-rotate">
+      <input type="checkbox" className="theme-controller" onChange={handleToggleTheme} />
+      <Button><SunIcon swapState={isLightTheme} /></Button>
+      <Button><MoonIcon swapState={!isLightTheme} /></Button>
+    </label>
   )
 }
 

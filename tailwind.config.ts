@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import appConfiguration from './config'
 
 const config: Config = {
   content: [
@@ -18,7 +19,13 @@ const config: Config = {
 
   // daisyUI config (optional - here are the default values)
   daisyui: {
-    themes: ['pastel', 'dracula'], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+    // false: only light + dark
+    // true: all themes
+    // array: specific themes like this ["light", "dark", "cupcake"]
+    themes: [
+      appConfiguration.themes.options.light,
+      appConfiguration.themes.options.dark
+    ],
     darkTheme: 'dark', // name of one of the included themes for dark mode
     base: true, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components

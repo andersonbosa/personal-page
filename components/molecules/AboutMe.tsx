@@ -10,11 +10,11 @@ const AboutMe: React.FC<AboutMeProps> = ({ }) => {
   return (
     <div
       id="afterTheHeroHeader"
-      className="min-h-screen w-full -- flex items-center justify-center content-start gap-10 -- flex-wrap lg:flex-nowrap -- p-8"
+      className="min-h-screen w-full -- p-8 -- flex items-center justify-center content-start gap-10 -- flex-wrap lg:flex-nowrap"
     >
-      <div className="w-full lg:w-[40%] -- flex justify-center items-center shrink-1 ">
+      <div className="w-full lg:w-[30%] -- flex justify-center items-center shrink-1 ">
         <Image
-          className="mask mask-squircle object-cover  lg:w-[60%] max-w-[500px] min-w-[321px]"
+          className="mask mask-squircle object-cover -- w-[40%] lg:w-[40%] max-w-[300px] min-w-[256px] "
           src={'https://github.com/andersonbosa.png'}
           height={321}
           width={321}
@@ -28,9 +28,13 @@ const AboutMe: React.FC<AboutMeProps> = ({ }) => {
           {t('title')}
         </h1>
         <br />
+
         <section className="text-justify">
-          <p>{t('content')}</p>
+          <p>{t('aboutMeContent')}</p>
         </section>
+        <br />
+
+
       </div>
     </div>
   )

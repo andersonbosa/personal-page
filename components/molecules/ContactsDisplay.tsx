@@ -23,7 +23,7 @@ const ContactsDisplay: React.FC<ContactsDisplayProps> = ({ contacts, className }
         <Link key={index} href={contact.hrefBuilder(contact.contact)} title={contact.label} target='_blank'>
           <LucideIcon
             name={contact.lucideIcon as LucideIconType}
-            additionalClassName={`btn btn-ghost -- ${className}`}
+            className={`btn btn-ghost -- ${className}`}
           />
         </Link>
       ))}

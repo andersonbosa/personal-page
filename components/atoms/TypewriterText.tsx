@@ -1,69 +1,31 @@
-import React, { useState, useEffect } from 'react';
-/*
-interface TypewriterTextProps {
-  phrases: string[];
-  interval: number;
-}
+'use client'
 
-const TypewriterText: React.FC<TypewriterTextProps> = ({ phrases, interval }) => {
-  const [phraseIndex, setPhraseIndex] = useState<number>(0);
-  const [charIndex, setCharIndex] = useState<number>(0);
-  const [typedText, setTypedText] = useState<string>('');
-
-  const typeWriterEffect = (): void => {
-    const currentPhrase = phrases[phraseIndex];
-    const char = currentPhrase[charIndex];
-
-    setTypedText((prevText) => prevText + char);
-    setCharIndex((prevIndex) => prevIndex + 1);
-
-    if (charIndex === currentPhrase.length - 1) {
-      setTimeout(() => {
-        setTypedText('');
-        setCharIndex(0);
-        setPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-      }, interval);
-    }
-
-    if (charIndex === currentPhrase.length) {
-      setCharIndex(0);
-      setPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-    }
-  };
-
-  useEffect(() => {
-    const intervalId = setInterval(typeWriterEffect, interval);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [phraseIndex, charIndex]);
-
-  return <span>{typedText}</span>;
-};
-
-export default TypewriterText;
- */
-
-import Typewriter from 'typewriter-effect';
+import Typewriter, { Options } from 'typewriter-effect'
 
 interface TypewriterTextProps {
   sentences: string[];
   className?: string;
+  options?: Partial<Options>;
 }
 
-const TypewriterText: React.FC<TypewriterTextProps> = ({ sentences, className }) => {
+function TypewriterText({ sentences, className, options }: TypewriterTextProps): React.JSX.Element {
   return (
-    <span className={className}>
-      <Typewriter
-        options={{
-          strings: sentences,
-          autoStart: true,
-          loop: true,
-        }}
-      />
+    <span className={`flex ${className}`}>
+      <div className='inline-flex gap-1'>
+        <p>I am a experienced</p>
+        <div className='font-extrabold'>
+          <Typewriter
+            options={{
+              strings: sentences,
+              autoStart: true,
+              loop: true,
+              ...options
+            }}
+          />
+        </div>
+      </div>
     </span>
-  );
-};
+  )
+}
 
-export default TypewriterText;
+export default TypewriterText

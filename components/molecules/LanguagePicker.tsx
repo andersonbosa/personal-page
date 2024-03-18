@@ -41,7 +41,7 @@ const LanguagePicker: React.FC<LanguagePickerProps> = ({ availableLanguages }) =
 
   const createLanguageListItem = (language: LanguageItem, index: number): React.ReactElement => {
     return (
-      <li key={language.id} tabIndex={index + 1}>
+      <li key={language.id} tabIndex={index + 1} className='flex items-stretch'>
         <button
           className={currentLocale === language.id ? 'active' : ''}
           onClick={() => handleLanguageChange(language)}
@@ -63,7 +63,7 @@ const LanguagePicker: React.FC<LanguagePickerProps> = ({ availableLanguages }) =
 
   return (
     <Dropdown
-      additionalClassName='dropdown-end'
+      className='dropdown-end'
       buttonContent={<TranslatorBtn />}
       menuContent={<>{availableLanguages.map(createLanguageListItem)}</>}
     />

@@ -4,14 +4,14 @@ export type LucideIconType = keyof typeof icons
 
 interface LucideIconProps {
   name: LucideIconType /* dark side of typescript 😅 */
-  additionalClassName?: string
+  className?: string
   color?: string
   size?: number
 }
 
 const LucideIcon: React.FC<LucideIconProps> = ({
   name,
-  additionalClassName = 'text-black',
+  className = 'text-black',
   size = 32
 }) => {
   const NamedLucideIcon = icons[name]
@@ -21,7 +21,7 @@ const LucideIcon: React.FC<LucideIconProps> = ({
 
   return (
     <>
-      <span className={additionalClassName}>
+      <span className={className}>
         <NamedLucideIcon size={size} />
       </span>
     </>

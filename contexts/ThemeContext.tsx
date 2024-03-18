@@ -1,5 +1,6 @@
 'use client'
 
+import appConfiguration from '@/config'
 import { INITIAL_LIGHT_THEME_STATE } from '@/constants'
 import { ProviderProps } from '@/types'
 import { createContext, useContext, useEffect, useState } from 'react'
@@ -38,47 +39,57 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // Function to update the theme state, set the theme on the HTML element, and store it in local storage
   const handleSetTheme = (newTheme: Theme) => {
     setTheme(newTheme)
-    // setIsLightTheme(newTheme === INITIAL_LIGHT_THEME_STATE)
+    setIsLightTheme(newTheme === INITIAL_LIGHT_THEME_STATE)
 
     // Updates the location only on the customer side
     window?.document.querySelector('html')?.setAttribute(HTML_THEME_KEY, newTheme)
-    window?.localStorage.setItem(LOCAL_STORAGE_KEY, newTheme)
-
-    console.log('handleSetTheme', theme,  isLightTheme, newTheme )
+    // window?.localStorage.setItem(LOCAL_STORAGE_KEY, newTheme)
+    // console.log('contexts/ThemeContext.tsx#handleSetTheme', theme,  isLightTheme, newTheme )
   }
 
   // Effect hook to check for a stored theme when the component mounts and set it if available
+  // useEffect(
+  //   () => {
+  //     const getStoredTheme = () => {
+  //       const storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY)
+  //       return storedTheme ? (storedTheme as Theme) : INITIAL_THEME_STATE
+  //     }
+
+  //     const storedTheme = getStoredTheme()
+
+  //     if (storedTheme === 'system') {
+  //       /**
+  //        * @see note
+  //        * It is not necessary to manually change the themebecause the framework
+  //        * already takes care of this when we use the "system" class.
+  //        */
+  //       // const isDarkModePrefered = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  //       // if (isDarkModePrefered) {
+  //       //   return handleSetTheme(INITIAL_DARK_THEME_STATE)
+  //       // } else {
+  //       //   return handleSetTheme(INITIAL_LIGHT_THEME_STATE)
+  //       // }
+  //       return
+  //     }
+
+  //     // console.log('contexts/ThemeContext.tsx#handleSetTheme', theme, isLightTheme, storedTheme )
+
+  //     handleSetTheme(storedTheme)
+  //   },
+  //   []
+  // )
+
+  // Effect hook to define initial theme based on app preference
   useEffect(
     () => {
-      const getStoredTheme = () => {
-        const storedTheme = localStorage.getItem(LOCAL_STORAGE_KEY)
-        return storedTheme ? (storedTheme as Theme) : INITIAL_THEME_STATE
-      }
-
-      const storedTheme = getStoredTheme()
-
-      if (storedTheme === 'system') {
-        /**
-         * @see note
-         * It is not necessary to manually change the themebecause the framework
-         * already takes care of this when we use the "system" class.
-         */
-        // const isDarkModePrefered = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-        // if (isDarkModePrefered) {
-        //   return handleSetTheme(INITIAL_DARK_THEME_STATE)
-        // } else {
-        //   return handleSetTheme(INITIAL_LIGHT_THEME_STATE)
-        // }
-        return
-      }
-
-      console.log('handleSetTheme', theme, isLightTheme, storedTheme )
-
-      handleSetTheme(storedTheme)
+      handleSetTheme(
+        appConfiguration.themes.options[
+          appConfiguration.themes.initialMode
+        ]
+      )
     },
     []
   )
-
 
   // Render the ThemeProvider component with its children wrapped by the ThemeContext.Provider
   return (

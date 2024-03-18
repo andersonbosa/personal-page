@@ -1,14 +1,13 @@
 import '@/styles/globals.css'
+import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
-import { NextIntlClientProvider, useMessages } from 'next-intl'
 import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react';
 
+import Background from '@/components/atoms/ParticlesBackground'
 import Footer from '@/components/atoms/Footer'
-import ConfigFloatingButton from '@/components/molecules/ConfigFloatingButton'
 import Navbar from '@/components/molecules/Navbar'
-import { ThemeProvider } from '@/contexts/ThemeContext'
-import StoreProvider from '../StoreProvider'
+import MainProviders from '@/contexts/Providers'
+import ScrollToTopButton from '@/components/atoms/ScrollToTopButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -30,22 +29,18 @@ export default function LocaleLayout(
     params: { locale }
   }: Readonly<RootLayoutProps>
 ) {
-  const messages = useMessages()
 
   return (
     <html lang={locale}>
       <body className={`${inter.className} bg-base-100 text-base-content`}>
-        <StoreProvider>
-          <NextIntlClientProvider messages={messages}>
-            <ThemeProvider>
-              <Navbar />
-              {/* <ConfigFloatingButton /> */}
-              {children}
-              <Footer />
-              <Analytics />
-            </ThemeProvider>
-          </NextIntlClientProvider>
-        </StoreProvider>
+        <MainProviders>
+          <Navbar />
+          {/* <ConfigFloatingButton /> */}
+          {children}
+          <Footer />
+          <Analytics />
+          <ScrollToTopButton />
+        </MainProviders>
       </body>
     </html>
   )

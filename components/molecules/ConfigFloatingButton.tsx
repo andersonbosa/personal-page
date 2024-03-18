@@ -27,9 +27,9 @@ const ConfigFloatingButton: React.FC<ConfigFloatingButtonProps> = () => {
 
     switch (appConfig.features.superButton.position) {
       case 'bottom-right':
-        return mappedPositions.bottom.right;
+        return mappedPositions.bottom.right
       default:
-        return mappedPositions.bottom.right;
+        return mappedPositions.bottom.right
     }
   }
 

@@ -4,6 +4,7 @@
 
 :root {
   --navbar-height: 64px;
+  --test-color: rgb(255, 0, 0);
 }
 
 @media (prefers-color-scheme: dark) {

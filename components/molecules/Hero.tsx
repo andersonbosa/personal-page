@@ -5,8 +5,8 @@ import { useTranslations } from 'next-intl'
 
 import LucideIcon from '@/components/atoms/LucideIcon'
 import ContactsDisplay from '@/components/molecules/ContactsDisplay'
-import { useEffect, useState } from 'react'
-import TypewriterText from '../atoms/TypewriterText'
+import ParticlesBackground from '@/components/atoms/ParticlesBackground'
+import TypewriterText from '@/components/atoms/TypewriterText'
 
 interface HeroProps { }
 
@@ -25,41 +25,43 @@ const Hero: React.FC<HeroProps> = () => {
   }
 
   return (
-    <div className="hero " style={{ height: 'calc(100vh - var(--navbar-height))' }}>
-      <div
-        className="hero-overlay -- bg-base-100 "
-      >
-      </div>
-      <div className="hero-content text-center">
-        <div className="max-w-md">
-          <h1 className="mb-5 -- text-9xl font-bold -- text-primary">
-            {t('title')}
-          </h1>
-          <div className="mb-5 min-h-10" >
-            <TypewriterText
-              className="text-2xl -- text-base-content"
-              sentences={['Software Engineer', 'Security Analyst', 'Penetration Tester']}
-            />
-          </div>
-          <div className="mb-5 -- flex justify-between flex-wrap gap-[1rem] " >
-            <ContactsDisplay contacts={MY_CONTACTS} className='bg-neutral text-base-100' />
-          </div>
-
-          <br />
-          <br />
-
-          <div className="flex justify-center" >
-            <span onClick={handleScrollDown}>
-              <LucideIcon
-                name="ChevronDown"
-                size={64}
-                additionalClassName='cursor-pointer bounce-animation -- text-neutral'
+    <>
+      <div className="hero" style={{ height: 'calc(100vh - var(--navbar-height))' }}>
+        <div
+          className="hero-overlay -- bg-base-100 "
+        >
+        </div>
+        <div className="hero-content text-center">
+          <div className="max-w-md">
+            <h1 className="mb-5 -- text-9xl font-bold text-end -- text-primary bg-gradient-to-r from-primary-500 to-accent-700">
+              {t('title')}
+            </h1>
+            <div className="mb-5 min-h-10 w-full" >
+              <TypewriterText
+                className="text-xl -- text-base-content"
+                sentences={['Software Engineer', 'Security Analyst', 'Critical thinker']}
               />
-            </span>
+            </div>
+            <div className="mb-5 -- flex justify-between flex-wrap gap-[1rem] " >
+              <ContactsDisplay contacts={MY_CONTACTS} className='bg-neutral text-base-100' />
+            </div>
+
+            <br />
+            <br />
+
+            <div className="flex justify-center" >
+              <span onClick={handleScrollDown}>
+                <LucideIcon
+                  name="ChevronDown"
+                  size={64}
+                  className='cursor-pointer bounce-animation -- text-neutral'
+                />
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

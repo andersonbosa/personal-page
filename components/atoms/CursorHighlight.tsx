@@ -1,7 +1,7 @@
 'use client'
 
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
 interface CursorHighlightProps {
   size?: number;
@@ -12,19 +12,19 @@ const CursorHighlight: React.FC<CursorHighlightProps> = ({
   size = 64,
   color = '#fff',
 }) => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: 0, y: 0 })
 
   const handleMouseMove = (e: MouseEvent) => {
-    setPosition({ x: e.clientX, y: e.clientY });
-  };
+    setPosition({ x: e.clientX, y: e.clientY })
+  }
 
   useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove)
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
 
   return (
     <div
@@ -41,7 +41,7 @@ const CursorHighlight: React.FC<CursorHighlightProps> = ({
         zIndex: 9999,
       }}
     />
-  );
-};
+  )
+}
 
-export default CursorHighlight;
+export default CursorHighlight

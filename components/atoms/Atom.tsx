@@ -2,7 +2,7 @@
 
 interface AtomProps { }
 
-const Atom: React.FC<AtomProps> = () => {
+function Atom (props: AtomProps): React.JSX.Element {
   return (
     <></>
   )

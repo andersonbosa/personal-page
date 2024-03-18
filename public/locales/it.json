@@ -12,9 +12,13 @@
   },
   "AboutMe": {
     "title": "Ciao! Mi chiamo Anderson",
-    "content": "Nel mio ruolo più recente presso Conviso come Ingegnere del Software Backend, dove ho trascorso un anno e mezzo, ho perfezionato le mie abilità nella risoluzione di problemi, ottimizzato i servizi, sviluppato API e assunto un ruolo di leadership nella manutenzione dei sistemi critici. In precedenza, sempre presso Conviso come Analista di Sicurezza, ho acquisito esperienza in audit automatizzati e manuali di sistemi web, mobili e di rete. Ho anche condotto in modo indipendente progetti come Penetration Tester per migliorare la maturità della sicurezza delle applicazioni dei nostri utenti, valutando le vulnerabilità e assistendo nella correzione o mitigazione di tali problemi."
-  },
+    "aboutMeContent": "In qualità di professionista appassionato di creare esperienze digitali eccezionali, il mio focus è sullo sviluppo di software e sulla garanzia della sua sicurezza. La mia dedizione si riflette nella ricerca di soluzioni scalabili e robuste, combinata con l'esperienza nella valutazione delle vulnerabilità e nei test di sicurezza. Il mio impegno è garantire che ogni software sia espressione di eccellenza e affidabilità, fornendo esperienze digitali innovative e protette.",
+    "recentTechnologies": "Le tecnologie con cui ho lavorato di recente:"
+   },
   "UnderConstruction": {
     "title": "In costruzione..."
+  },
+  "ScrollToTopButton": {
+    "tooltip": "Fare clic per tornare in cima"
   }
 }

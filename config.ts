@@ -1,4 +1,4 @@
-import { Theme } from './contexts/ThemeContext';
+import { Theme } from './contexts/ThemeContext'
 
 type TogglerThemeOptions = {
   light: Theme;
@@ -27,6 +27,7 @@ export type IAppConfiguration = {
 
   themes: {
     type: 'toggler' | 'picker';
+    initialMode: 'light' | 'dark';
     options: 'toggler' extends IAppConfiguration['themes']['type'] ? TogglerThemeOptions : PickerThemeOptions;
   };
 };
@@ -49,11 +50,12 @@ const appConfiguration: IAppConfiguration = {
 
   themes: {
     type: 'toggler',
+    initialMode: 'dark',
     options: {
-      light: 'light',
-      dark: 'dracula',
+      light: 'lofi',
+      dark: 'sunset',
     },
   },
-};
+}
 
-export default appConfiguration;
+export default appConfiguration
