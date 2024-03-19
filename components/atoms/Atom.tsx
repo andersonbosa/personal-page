@@ -1,10 +1,14 @@
 'use client'
 
-interface AtomProps { }
+interface AtomProps {
+  className?: string
+}
 
-function Atom (props: AtomProps): React.JSX.Element {
+function Atom(props: AtomProps): React.JSX.Element {
   return (
-    <></>
+    <>
+      <div className={props.className}></div>
+    </>
   )
 }
 
