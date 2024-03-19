@@ -5,7 +5,7 @@ import { Theme, useTheme } from '@/contexts/ThemeContext'
 import SunIcon from './Icons/SunIcon'
 import MoonIcon from './Icons/MoonIcon'
 import React from 'react'
-import Button from './Button'
+import Button from '../theme/Button'
 
 interface ThemeToggleProps { }
 

@@ -1,7 +1,7 @@
 'use client'
 
 interface ToolTipProps {
-  children: React.JSX.Element
+  children: React.ReactNode
   tip: string
   className?: string
 }

@@ -35,3 +35,8 @@
   animation: bounce 1.3s infinite;
   animation-timing-function: ease-in-out;
 }
+
+
+.daisyui-glow-effect {
+  background-image: linear-gradient(90deg, oklch(var(--s)) 4%, color-mix(in oklch, oklch(var(--s)), oklch(var(--er))) 22%, oklch(var(--p)) 45%, color-mix(in oklch, oklch(var(--p)), oklch(var(--a))) 67%, oklch(var(--a)) 100.2%);
+}

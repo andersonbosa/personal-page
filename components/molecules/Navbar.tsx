@@ -1,14 +1,13 @@
 'use client'
 
 import { AVAIABLE_LANGUAGES, } from '@/constants'
-import LanguagePicker from './LanguagePicker'
 import ThemeToggle from '../atoms/ThemeToggle'
-import Button from '../atoms/Button'
-import Dropdown from '../atoms/Dropdown'
+import Button from '../theme/Button'
+import LanguagePicker from './LanguagePicker'
 
 interface NavbarProps { }
 
-const Navbar: React.FC<NavbarProps> = () => {
+function Navbar(props: NavbarProps): React.JSX.Element {
   return (
     <div className="navbar p-[7px] -- flex justify-between min-h-[var(--navbar-height)] -- bg-base-100">
       <Button>

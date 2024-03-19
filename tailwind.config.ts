@@ -9,7 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-5deg)' },
+          '50%': { transform: 'rotate(5deg)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 700ms ease-in-out infinite',
+      }
     },
   },
   plugins: [

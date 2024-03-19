@@ -3,9 +3,6 @@ import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-import Footer from '@/components/atoms/Footer'
-import ScrollToTopButton from '@/components/atoms/ScrollToTopButton'
-import Navbar from '@/components/molecules/Navbar'
 import MainProviders from '@/contexts/Providers'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -33,12 +30,9 @@ export default function LocaleLayout(
     <html lang={locale}>
       <body className={`${inter.className} bg-base-100 text-base-content`}>
         <MainProviders>
-          <Navbar />
           {/* <ConfigFloatingButton /> */}
           {children}
-          <Footer />
           <Analytics />
-          <ScrollToTopButton />
         </MainProviders>
       </body>
     </html>

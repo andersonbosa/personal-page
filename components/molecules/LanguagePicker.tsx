@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 import { updateUrlLocale } from '@/utils'
 import { usePathname } from 'next/navigation'
-import Dropdown from '../atoms/Dropdown'
+import Dropdown from '../theme/Dropdown'
 import TranslatorBtn from '../atoms/Icons/TranslatorBtn'
 
 interface LanguagePickerProps {

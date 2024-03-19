@@ -18,7 +18,11 @@
   "UnderConstruction": {
     "title": "Under construction..."
   },
-  "ScrollToTopButton": {
-    "tooltip": "Click to go back to the top"
+  "ScrollerController": {
+    "tooltip_up": "Click to go back to the top"
+  },
+  "ContactMe": {
+    "title": "Contacts",
+    "contact_me": "Feel free to contact me. My inbox is always open. I'll get back to you as soon as possible, that's a promise!"
   }
 }

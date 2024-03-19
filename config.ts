@@ -52,7 +52,7 @@ const appConfiguration: IAppConfiguration = {
     type: 'toggler',
     initialMode: 'light',
     options: {
-      light: 'light', //'lofi',
+      light: 'light', //'lofi'
       dark: 'sunset',
     },
   },

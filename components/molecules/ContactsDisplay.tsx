@@ -20,10 +20,16 @@ const ContactsDisplay: React.FC<ContactsDisplayProps> = ({ contacts, className }
   return (
     <>
       {contacts.map((contact, index) => (
-        <Link key={index} href={contact.hrefBuilder(contact.contact)} title={contact.label} target='_blank'>
+        <Link
+          key={index}
+          title={contact.label}
+          href={contact.hrefBuilder(contact.contact)}
+          target='_blank'
+          className='hover:motion-safe:animate-wiggle'
+        >
           <LucideIcon
             name={contact.lucideIcon as LucideIconType}
-            className={`btn btn-ghost -- ${className}`}
+            className={`btn btn-ghost -- bg-neutral text-neutral-content -- ${className}`}
           />
         </Link>
       ))}

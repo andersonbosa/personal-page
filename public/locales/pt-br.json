@@ -18,7 +18,11 @@
   "UnderConstruction": {
     "title": "Em construção..."
   },
-  "ScrollToTopButton": {
-    "tooltip": "Clique para voltar ao topo"
+  "ScrollController": {
+    "tooltip_up": "Clique para voltar ao topo"
+  },
+  "ContactMe": {
+    "title": "Contatos",
+    "contact_me": "Sinta-se à vontade para entrar em contato comigo. Minha caixa de entrada está sempre aberta. Vou responder o mais rápido possível, isso é uma promessa!"
   }
 }

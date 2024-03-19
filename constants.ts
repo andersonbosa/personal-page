@@ -7,7 +7,7 @@ export const INITIAL_LIGHT_THEME_STATE: Theme = appConfiguration.themes.options.
 export const INITIAL_DARK_THEME_STATE: Theme = appConfiguration.themes.options.dark
 
 export const AVAILABLE_PICKER_THEMES = [
-  'light', 'retro', 'dracula', 'dark'
+  'light', 'retro', 'lofi', 'dracula', 'dark', 'sunset', 'dim'
 ]
 
 export const AVAIABLE_LANGUAGES: LanguageItem[] = [
@@ -98,6 +98,12 @@ export const TECHNOLOGIES: any = {
   ],
   backend: [
     {
+      slug: 'python',
+      label: 'Python',
+      image: 'assets/images/python.svg',
+      experience: 5
+    },
+    {
       slug: 'nodejs',
       label: 'Node.js',
       image: 'assets/images/nodejs.svg',
@@ -109,11 +115,17 @@ export const TECHNOLOGIES: any = {
       image: 'assets/images/expressjs.svg',
       experience: 4
     },
+    {
+      slug: 'rubyonrails',
+      label: 'Ruby On Rails',
+      image: 'assets/images/rubyonrails.svg',
+      experience: 2
+    },
   ],
   api: [
     {
       slug: 'restful-apis',
-      label: 'RESTful APIs',
+      label: 'RESTful',
       image: 'assets/images/restful-apis.svg',
       experience: 5
     },
@@ -135,45 +147,51 @@ export const TECHNOLOGIES: any = {
       slug: 'kubernetes',
       label: 'Kubernetes',
       image: 'assets/images/kubernetes.svg',
-      experience: 2
+      experience: -1
+    },
+    {
+      slug: 'terraform',
+      label: 'Terraform',
+      image: 'assets/images/terraform.svg',
+      experience: -1
     },
   ],
   security: [
-    // {
-    //   slug: 'ssl-tls',
-    //   label: 'SSL/TLS',
-    //   image: 'assets/images/ssl-tls.svg',
-    //   experience: 4
-    // },
-    // {
-    //   slug: 'oauth',
-    //   label: 'OAuth',
-    //   image: 'assets/images/oauth.svg',
-    //   experience: 4
-    // },
+
+    {
+      slug: 'burp-suite',
+      label: 'BurpSuite',
+      image: 'assets/images/burp-suite.svg',
+      experience: 5
+    },
+    {
+      slug: 'zap',
+      label: 'Zed Attack Proxy',
+      image: 'assets/images/zap.svg',
+      experience: 3
+    },
     {
       slug: 'nuclei',
       label: 'Nuclei',
       image: 'assets/images/nuclei.svg',
-      experience: 4
-    },
-    {
-      slug: 'burp-suite',
-      label: 'Burp Suite',
-      image: 'assets/images/burp-suite.svg',
-      experience: 4
-    },
-    {
-      slug: 'zap',
-      label: 'ZAP (Zed Attack Proxy)',
-      image: 'assets/images/zap.svg',
-      experience: 4
+      experience: 3
     },
     {
       slug: 'semgrep',
       label: 'Semgrep',
       image: 'assets/images/semgrep.svg',
-      experience: 4
+      experience: 3
     },
   ],
+}
+
+interface IPageSectionsID {
+  hero:string
+  aboutMe: string
+  contacts: string
+}
+export const PageSectionsID: IPageSectionsID = {
+  hero: 'Hero-ba75da00-5b1a-48d8-986b-06c3ae223400',
+  aboutMe: 'AboutMe-1ee047e6-5e45-480e-acf8-65d044d8bc76',
+  contacts: 'Contacts-4d95a2a1-5cd7-45dd-8653-2a28dbc86bd1'
 }

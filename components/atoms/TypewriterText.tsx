@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Typewriter, { Options } from 'typewriter-effect'
 
 interface TypewriterTextProps {
@@ -9,6 +10,7 @@ interface TypewriterTextProps {
 }
 
 function TypewriterText({ sentences, className, options }: TypewriterTextProps): React.JSX.Element {
+
   return (
     <span className={`flex ${className}`}>
       <div className='inline-flex gap-1'>

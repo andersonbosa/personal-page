@@ -1,13 +1,23 @@
 'use client'
 
-interface AtomProps {
+import { HTMLAttributes } from 'react'
+
+interface AtomProps extends HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode
   className?: string
 }
 
-function Atom(props: AtomProps): React.JSX.Element {
+function Atom({
+  children,
+  className,
+  ...htmlAttributes
+
+}: AtomProps): React.JSX.Element {
   return (
     <>
-      <div className={props.className}></div>
+      <div className={className} {...htmlAttributes} >
+        {children}
+      </div>
     </>
   )
 }
