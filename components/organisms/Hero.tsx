@@ -4,9 +4,8 @@ import { MY_CONTACTS } from '@/constants'
 import { useTranslations } from 'next-intl'
 
 import LucideIcon from '@/components/atoms/LucideIcon'
-import ContactsDisplay from '@/components/molecules/ContactsDisplay'
-import ParticlesBackground from '@/components/atoms/ParticlesBackground'
 import TypewriterText from '@/components/atoms/TypewriterText'
+import ContactsDisplay from '@/components/molecules/ContactsDisplay'
 
 interface HeroProps { }
 

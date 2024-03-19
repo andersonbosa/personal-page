@@ -50,9 +50,9 @@ const appConfiguration: IAppConfiguration = {
 
   themes: {
     type: 'toggler',
-    initialMode: 'dark',
+    initialMode: 'light',
     options: {
-      light: 'lofi',
+      light: 'light', //'lofi',
       dark: 'sunset',
     },
   },

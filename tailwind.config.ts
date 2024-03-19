@@ -8,10 +8,12 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+
+    },
   },
   plugins: [
-    // require("@tailwindcss/typography"), // https://tailwindcss.com/docs/typography-plugin
+    require('@tailwindcss/typography'), // https://tailwindcss.com/docs/typography-plugin
     require('daisyui')
   ],
 

@@ -3,11 +3,10 @@ import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-import Background from '@/components/atoms/ParticlesBackground'
 import Footer from '@/components/atoms/Footer'
+import ScrollToTopButton from '@/components/atoms/ScrollToTopButton'
 import Navbar from '@/components/molecules/Navbar'
 import MainProviders from '@/contexts/Providers'
-import ScrollToTopButton from '@/components/atoms/ScrollToTopButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
