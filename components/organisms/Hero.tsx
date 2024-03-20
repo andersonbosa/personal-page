@@ -33,13 +33,14 @@ function Hero(props: HeroProps): React.JSX.Element {
         <div className="hero-content text-center">
           <div className="max-w-md lg:max-w-full">
             <h1 className="mb-5">
-              <GlowingText text={t('title')} className='text-9xl font-extrabold' />
+              <GlowingText text={t('title')} className='text-[5rem] md:text-[8rem] -- font-extrabold' />
             </h1>
-            <div className="mb-5 min-h-10 w-full" >
-              <TypewriterText
-                className="text-xl -- text-base-content"
-                sentences={['Software Engineer', 'Security Analyst', 'Critical thinker']}
-              />
+
+            <div className="mb-5 -- min-h-10 w-full -- flex justify-center md:justify-start -- flex-row md:flex-column" >
+              <div className='inline-flex gap-1 flex-col md:flex-row -- text-xl -- text-base-content'>
+                <div><p>I am a experienced</p></div>
+                <TypewriterText sentences={['Software Engineer', 'Security Analyst', 'Critical thinker']} />
+              </div>
             </div>
 
             <br />

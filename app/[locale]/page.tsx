@@ -4,6 +4,7 @@ import Navbar from '@/components/molecules/Navbar'
 import AboutMe from '@/components/organisms/AboutMe'
 import ContactMe from '@/components/organisms/ContactMe'
 import Hero from '@/components/organisms/Hero'
+import MyExperiences from '@/components/organisms/MyExperiences'
 
 // import dynamic from 'next/dynamic'
 // const Hero = dynamic(() => import('@/components/organisms/Hero'), { ssr: false })
@@ -15,10 +16,11 @@ export default function IndexPage() {
   return (
     <>
       <Navbar />
-      <main className="flex flex-col items-center justify-between">
+      <main /* className="max-w-screen" */>
         <Hero />
         <AboutMe />
         <ContactMe />
+        <MyExperiences />
       </main>
       <ScrollerController />
       <Footer />

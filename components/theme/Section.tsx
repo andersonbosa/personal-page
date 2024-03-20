@@ -14,7 +14,7 @@ function Section({
 }: SectionProps): React.JSX.Element {
   return (
     <>
-      <div className={`md:min-h-screen -- w-full max-w-[40rem] md:max-w-full -- p-8 -- flex items-center justify-center content-center -- ${className}`} {...htmlAttributes}>
+      <div data-id="section" className={` md:min-h-screen -- w-full max-w-[40rem] md:max-w-full md:min-w-screen -- p-8 -- flex items-center justify-center content-center -- ${className}`} {...htmlAttributes}>
         {children}
       </div>
     </>

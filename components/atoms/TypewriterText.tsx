@@ -10,12 +10,8 @@ interface TypewriterTextProps {
 }
 
 function TypewriterText({ sentences, className, options }: TypewriterTextProps): React.JSX.Element {
-
   return (
-    <span className={`flex ${className}`}>
-      <div className='inline-flex gap-1'>
-        <p>I am a experienced</p>
-        <div className='font-extrabold'>
+     <div className='font-extrabold'>
           <Typewriter
             options={{
               strings: sentences,
@@ -25,8 +21,6 @@ function TypewriterText({ sentences, className, options }: TypewriterTextProps):
             }}
           />
         </div>
-      </div>
-    </span>
   )
 }
 
