@@ -9,11 +9,11 @@ interface MyExperiencesProps {
 
 function MyExperiences(props: MyExperiencesProps): React.JSX.Element {
   return (
-<>
-<Section className={`${props.className}`}>
-  {props.children}
-</Section>
-</>
+    <>
+      <Section className={`${props.className}`}>
+        {props.children}
+      </Section>
+    </>
   )
 }
 

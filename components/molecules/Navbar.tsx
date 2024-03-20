@@ -9,7 +9,7 @@ interface NavbarProps { }
 
 function Navbar(props: NavbarProps): React.JSX.Element {
   return (
-    <div className="navbar p-[7px] -- flex justify-between min-h-[var(--navbar-height)] -- bg-base-100">
+    <nav className="navbar p-[7px] -- flex justify-between min-h-[var(--navbar-height)] -- bg-base-100">
       <Button>
         <div className="px-2 lg:flex-none">
           <a href='/' className="text-lg font-bold">ANB</a>
@@ -22,7 +22,7 @@ function Navbar(props: NavbarProps): React.JSX.Element {
           <LanguagePicker availableLanguages={AVAIABLE_LANGUAGES} />
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 

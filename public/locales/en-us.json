@@ -1,4 +1,7 @@
 {
+  "Generic": {
+    "see_more": "See more"
+  },
   "Hero": {
     "title": "Hello world!"
   },
@@ -18,7 +21,7 @@
   "UnderConstruction": {
     "title": "Under construction..."
   },
-  "ScrollerController": {
+  "ScrollController": {
     "tooltip_up": "Click to go back to the top"
   },
   "ContactMe": {

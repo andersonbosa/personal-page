@@ -1,5 +1,5 @@
 import Footer from '@/components/atoms/Footer'
-import ScrollerController from '@/components/atoms/ScrollController'
+import ScrollController from '@/components/atoms/ScrollController'
 import Navbar from '@/components/molecules/Navbar'
 import AboutMe from '@/components/organisms/AboutMe'
 import ContactMe from '@/components/organisms/ContactMe'
@@ -16,13 +16,13 @@ export default function IndexPage() {
   return (
     <>
       <Navbar />
-      <main /* className="max-w-screen" */>
+      <main>
         <Hero />
         <AboutMe />
         <ContactMe />
-        <MyExperiences />
+        {/* <MyExperiences /> */}
       </main>
-      <ScrollerController />
+      <ScrollController />
       <Footer />
     </>
   )

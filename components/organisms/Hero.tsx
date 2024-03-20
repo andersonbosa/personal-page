@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 import LucideIcon from '@/components/atoms/LucideIcon'
 import TypewriterText from '@/components/atoms/TypewriterText'
 import GlowingText from '../atoms/GlowingText'
+import Section from '../theme/Section'
 
 interface HeroProps { }
 
@@ -24,20 +25,25 @@ function Hero(props: HeroProps): React.JSX.Element {
   }
 
   return (
-    <>
-      <div className="hero" style={{ height: 'calc(100vh - var(--navbar-height))' }}>
+    <Section
+      id={PageSectionsID.hero}
+      style={{ height: 'calc(100vh - var(--navbar-height))' }}
+    >
+      <div className="hero" >
         <div
           className="hero-overlay -- bg-base-100 "
         >
         </div>
         <div className="hero-content text-center">
           <div className="max-w-md lg:max-w-full">
-            <h1 className="mb-5">
-              <GlowingText text={t('title')} className='text-[5rem] md:text-[8rem] -- font-extrabold' />
-            </h1>
+            <div className="mb-5">
+              <h1>
+                <GlowingText text={t('title')} className='text-[5rem] md:text-[8rem] -- font-extrabold' />
+              </h1>
+            </div>
 
             <div className="mb-5 -- min-h-10 w-full -- flex justify-center md:justify-start -- flex-row md:flex-column" >
-              <div className='inline-flex gap-1 flex-col md:flex-row -- text-xl -- text-base-content'>
+              <div className='inline-flex gap-1 flex-col md:flex-row -- text-xl -- text-base-content -- pointer-events-none'>
                 <div><p>I am a experienced</p></div>
                 <TypewriterText sentences={['Software Engineer', 'Security Analyst', 'Critical thinker']} />
               </div>
@@ -58,7 +64,7 @@ function Hero(props: HeroProps): React.JSX.Element {
           </div>
         </div>
       </div>
-    </>
+    </Section>
   )
 }
 

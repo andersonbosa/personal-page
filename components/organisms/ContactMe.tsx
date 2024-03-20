@@ -11,12 +11,13 @@ interface ContactMeProps { }
 function ContactMe(props: ContactMeProps): React.JSX.Element {
   const t = useTranslations('ContactMe')
   return (
-    <Section>
-      <div id={PageSectionsID.contacts} className="max-w-[40rem]" >
+    <Section id={PageSectionsID.contacts}>
+      <div className="max-w-[40rem]" >
         <Header>{t('title')}</Header>
 
         <p>{t('contact_me')}</p>
 
+        <br />
         <br />
 
         <div className='flex justify-center flex-wrap gap-[1rem]'>
